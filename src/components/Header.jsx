@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, Terminal, Cpu, ChevronRight } from 'lucide-react';
+import NortcodeLogo from './NortcodeLogo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,33 +35,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo & Isotype */}
+          {/* Official Logo & Isotype */}
           <a
             href="#inicio"
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Nortcode - Ir al inicio"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-brand-surface border border-brand-border group-hover:border-brand-cyan/60 transition-colors duration-300 overflow-hidden shadow-inner">
-              <svg viewBox="0 0 32 32" className="w-6 h-6 text-brand-cyan transition-transform duration-300 group-hover:scale-105" fill="none">
-                <path d="M16 6L23 22L16 19L9 22L16 6Z" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.75" strokeLinejoin="round"/>
-                <path d="M16 6V19" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
-                <circle cx="8" cy="25" r="1.25" fill="#3B82F6"/>
-                <circle cx="24" cy="25" r="1.25" fill="#3B82F6"/>
-              </svg>
-              <div className="absolute inset-0 bg-brand-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-lg font-bold tracking-tight text-white font-mono">
-                  NORT<span className="text-brand-cyan">CODE</span>
-                </span>
-                <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" title="Sistema Operativo" />
-              </div>
-              <span className="text-[10px] tracking-wider uppercase text-brand-dim font-mono">
-                Estudio Digital
-              </span>
-            </div>
+            <NortcodeLogo size="md" showBadge={true} />
           </a>
 
           {/* Desktop Navigation Links */}

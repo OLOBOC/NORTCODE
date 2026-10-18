@@ -109,6 +109,19 @@ export default function About() {
               </div>
             ))}
 
+            <div className="p-4 rounded-xl bg-brand-surface/90 border border-brand-border/80 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <img src="/logo-cyan.png" alt="Nortcode Insignia" className="w-8 h-8 object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" />
+                <div className="text-left">
+                  <div className="text-xs font-mono font-bold text-white">NORTCODE STUDIO</div>
+                  <div className="text-[10px] font-mono text-brand-dim">Ingeniería Web & Automatización</div>
+                </div>
+              </div>
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40">
+                VERIFICADO
+              </span>
+            </div>
+
             <div className="p-4 rounded-xl bg-brand-card/70 border border-brand-border text-center space-y-2">
               <span className="text-[11px] font-mono text-brand-dim">UBICACIÓN & ALCANCE</span>
               <p className="text-xs text-brand-text">

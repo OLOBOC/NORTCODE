@@ -57,7 +57,11 @@ export const metadata = {
     description: 'Desarrollo web, digitalización y automatización de procesos sin humo.',
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo-white.png', sizes: '256x256', type: 'image/png' },
+    ],
+    apple: '/logo-white.png',
   },
 };
 

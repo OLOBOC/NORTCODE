@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Send, CheckCircle2, AlertCircle, RefreshCw, Mail, MessageSquare, ShieldCheck, Clock, Lock } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, RefreshCw, Mail, MessageSquare, MessageCircle, ShieldCheck, Clock, Lock } from 'lucide-react';
 import { isValidEmail } from '@/lib/sanitize';
 
 export default function ContactForm({ initialData, onOpenLegalModal }) {
@@ -142,25 +142,43 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
               </div>
             </div>
 
-            {/* Modular WhatsApp / Direct Chat Ready Container */}
-            <div className="p-5 rounded-2xl bg-brand-card/60 border border-brand-border space-y-2">
+            {/* ========================================================================= */}
+            {/* INTEGRACIÓN MODULAR WHATSAPP / MENSAJERÍA DIRECTA (FASE POSTERIOR)         */}
+            {/* Para activar la redirección directa por WhatsApp:                         */}
+            {/* 1. Sustituye '34600000000' por tu número oficial con prefijo país.         */}
+            {/* 2. Descomenta el botón de WhatsApp a continuación.                         */}
+            {/* ========================================================================= */}
+            <div className="p-5 rounded-2xl bg-brand-surface border border-brand-border space-y-3">
               <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-brand-dim">CANAL DE MENSAJERÍA DIRECTA</span>
+                <span className="text-brand-dim uppercase tracking-wider">CANAL DE MENSAJERÍA DIRECTA</span>
                 <span className="text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40 text-[10px]">
                   ENLACE RÁPIDO
                 </span>
               </div>
-              <p className="text-xs text-brand-muted">
-                ¿Prefieres consultar por WhatsApp o mensajería directa? Puedes solicitar contacto prioritario marcándolo en el formulario o escribiendo directamente.
+              <p className="text-xs text-brand-muted leading-relaxed">
+                ¿Prefieres consultar por mensajería o WhatsApp para casos prioritarios? Puedes solicitar contacto rápido o iniciar la conversación aquí.
               </p>
-              <div className="pt-1">
+              
+              <div className="pt-1 flex flex-wrap gap-2">
                 <a
-                  href="mailto:oloboc.digitalbusiness@gmail.com?subject=Consulta%20Rápida%20Nortcode"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cyan hover:underline"
+                  href="mailto:oloboc.digitalbusiness@gmail.com?subject=Consulta%20R%C3%A1pida%20Nortcode"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-brand-cyan hover:text-white bg-brand-cyan/10 hover:bg-brand-cyan/20 border border-brand-cyan/30 rounded-xl transition-all"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Iniciar conversación rápida por correo</span>
+                  <span>Consulta rápida por correo</span>
                 </a>
+
+                {/* BOTÓN WHATSAPP PREPARADO: Descomentar para activar
+                <a
+                  href={`https://wa.me/34600000000?text=${encodeURIComponent('Hola Nortcode, me gustaría consultar la disponibilidad para un proyecto web o de automatización.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-emerald-400 hover:text-white bg-emerald-950/40 hover:bg-emerald-900/60 border border-emerald-800/50 rounded-xl transition-all"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Chat en WhatsApp</span>
+                </a>
+                */}
               </div>
             </div>
 

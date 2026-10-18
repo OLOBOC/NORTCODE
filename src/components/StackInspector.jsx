@@ -54,9 +54,12 @@ export default function StackInspector() {
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
           </div>
-          <span className="ml-2 font-mono text-brand-dim text-[11px] hidden sm:inline">
-            nortcode-core-telemetry // v2.4.0
-          </span>
+          <div className="flex items-center gap-1.5 ml-2">
+            <img src="/logo-cyan.png" alt="" className="w-3.5 h-3.5 object-contain" />
+            <span className="font-mono text-brand-dim text-[11px] hidden sm:inline">
+              nortcode-core-telemetry // v2.4.0
+            </span>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">

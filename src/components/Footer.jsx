@@ -1,6 +1,7 @@
 'use client';
 
 import { Terminal, Shield, ArrowUp, Mail, Globe, Code2 } from 'lucide-react';
+import NortcodeLogo from './NortcodeLogo';
 
 export default function Footer({ onOpenLegalModal }) {
   const scrollToTop = () => {
@@ -13,17 +14,7 @@ export default function Footer({ onOpenLegalModal }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-card border border-brand-border text-brand-cyan">
-                <svg viewBox="0 0 32 32" className="w-5 h-5 text-brand-cyan" fill="none">
-                  <path d="M16 6L23 22L16 19L9 22L16 6Z" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.75" strokeLinejoin="round"/>
-                  <path d="M16 6V19" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <span className="text-base font-bold text-white font-mono tracking-tight">
-                NORT<span className="text-brand-cyan">CODE</span>
-              </span>
-            </div>
+            <NortcodeLogo size="md" showBadge={false} />
 
             <p className="text-xs text-brand-dim max-w-sm leading-relaxed">
               Estudio digital de desarrollo web, digitalización y automatización con IA. Ingeniería de software limpia, soluciones sólidas y cero humo.
