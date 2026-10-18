@@ -11,13 +11,12 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          {/* Real Credentials Pill with Official Logo Mark */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-surface/90 border border-brand-border/80 hover:border-brand-cyan/40 text-xs font-mono text-brand-muted shadow-lg shadow-black/40 transition-colors">
-            <img src="/logo-cyan.png" alt="Nortcode" className="w-4 h-4 object-contain filter drop-shadow-[0_0_6px_rgba(0,240,255,0.5)]" />
+          {/* Real Credentials Pill - Zero humo */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-muted shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-brand-cyan" />
             <span className="text-white font-medium">ESTUDIO DIGITAL INDEPENDIENTE</span>
             <span className="text-brand-dim">•</span>
             <span className="text-brand-dim hidden sm:inline">FORMACIÓN OFICIAL DAW & DAM</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-0.5" />
           </div>
 
           {/* Primary Headline */}

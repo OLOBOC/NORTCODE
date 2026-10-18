@@ -1,6 +1,7 @@
 'use client';
 
 import { Terminal, GraduationCap, Cpu, ShieldCheck, HeartHandshake, Code, Sparkles, Check } from 'lucide-react';
+import NortcodeLogo from './NortcodeLogo';
 
 export default function About() {
   const credentials = [
@@ -109,9 +110,9 @@ export default function About() {
               </div>
             ))}
 
-            <div className="p-4 rounded-xl bg-brand-surface/90 border border-brand-border/80 flex items-center justify-between gap-4">
+            <div className="p-4 rounded-xl bg-brand-surface border border-brand-border flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <img src="/logo-cyan.png" alt="Nortcode Insignia" className="w-8 h-8 object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]" />
+                <NortcodeLogo size="sm" variant="white" showText={false} />
                 <div className="text-left">
                   <div className="text-xs font-mono font-bold text-white">NORTCODE STUDIO</div>
                   <div className="text-[10px] font-mono text-brand-dim">Ingeniería Web & Automatización</div>

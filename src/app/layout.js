@@ -97,6 +97,22 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <meta name="theme-color" content="#08090a" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html, body {
+                background-color: #08090a !important;
+                color: #f3f4f6 !important;
+                margin: 0;
+                padding: 0;
+              }
+              img {
+                max-width: 100%;
+                height: auto;
+              }
+            `,
+          }}
+        />
       </head>
       <body className="font-sans bg-brand-bg text-brand-text min-h-screen antialiased selection:bg-brand-cyan/20 selection:text-brand-cyan">
         {children}
