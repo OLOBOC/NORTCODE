@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,20 +10,20 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          bg: '#08090a',
-          surface: '#0d0f12',
-          card: '#12151b',
-          elevated: '#171b23',
-          border: '#202530',
-          'border-light': '#2c3342',
+          bg: 'var(--brand-bg)',
+          surface: 'var(--brand-surface)',
+          card: 'var(--brand-card)',
+          elevated: 'var(--brand-elevated)',
+          border: 'var(--brand-border)',
+          'border-light': 'var(--brand-border-light)',
           cyan: '#00f0ff',
           'cyan-glow': 'rgba(0, 240, 255, 0.15)',
           blue: '#3b82f6',
           'blue-dark': '#1d4ed8',
           accent: '#00e5ff',
-          text: '#f3f4f6',
-          muted: '#9ca3af',
-          dim: '#6b7280'
+          text: 'var(--brand-text)',
+          muted: 'var(--brand-muted)',
+          dim: 'var(--brand-dim)',
         }
       },
       fontFamily: {

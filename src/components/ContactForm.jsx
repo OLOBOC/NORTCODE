@@ -122,23 +122,23 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
               </p>
             </div>
 
-            {/* Direct Official Email Card */}
+            {/* Direct Email Action Card */}
             <div className="p-5 rounded-2xl bg-brand-surface border border-brand-border space-y-3">
               <span className="text-[10px] font-mono text-brand-dim uppercase tracking-wider">
-                CORREO ELECTRÓNICO OFICIAL:
+                CANAL DE EMAIL DIRECTO
               </span>
               <a
                 href="mailto:oloboc.digitalbusiness@gmail.com"
-                className="flex items-center gap-3 text-sm sm:text-base font-mono text-white hover:text-brand-cyan transition-colors group"
+                className="flex items-center gap-3 text-sm sm:text-base font-semibold text-brand-text hover:text-brand-cyan transition-colors group"
               >
-                <div className="p-2 rounded-lg bg-brand-card border border-brand-border text-brand-cyan group-hover:border-brand-cyan/40 transition-colors">
+                <div className="p-2.5 rounded-xl bg-brand-card border border-brand-border text-brand-cyan group-hover:border-brand-cyan/40 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="break-all font-semibold">oloboc.digitalbusiness@gmail.com</span>
+                <span>Escribir por Correo Electrónico ↗</span>
               </a>
               <div className="text-xs text-brand-dim flex items-center gap-2 pt-1">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Tiempo medio de respuesta: &lt; 24 horas</span>
+                <Clock className="w-3.5 h-3.5 text-emerald-500" />
+                <span>Tiempo medio de respuesta: &lt; 24 horas laborables</span>
               </div>
             </div>
 
@@ -380,7 +380,7 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
 
                 {/* Footer Micro-note */}
                 <div className="text-center pt-2 text-[11px] font-mono text-brand-dim">
-                  Destino directo: oloboc.digitalbusiness@gmail.com • Cero Spam Garantizado
+                  Canal de contacto cifrado • Respuesta directa del desarrollador • Cero Spam
                 </div>
               </form>
             </div>

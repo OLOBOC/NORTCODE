@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
+import WebAuditTool from '@/components/WebAuditTool';
 import NeedMatcher from '@/components/NeedMatcher';
 import Portfolio from '@/components/Portfolio';
 import Methodology from '@/components/Methodology';
@@ -31,27 +32,30 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-brand-bg text-brand-text flex flex-col selection:bg-brand-cyan/20 selection:text-brand-cyan">
-      {/* Navigation Bar */}
+      {/* Navigation Bar with Theme Toggle */}
       <Header />
 
       {/* Main Content Area */}
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Hero Section (Conversion focused, clean credentials) */}
         <Hero />
 
-        {/* Services & Three Pillars */}
+        {/* Services & Three Pillars (With expanded multi-scenario comparators) */}
         <Services />
+
+        {/* High-Conversion Lead Magnet: Web Audit & Loss Diagnostic Tool */}
+        <WebAuditTool onTransferToContact={handleTransferToContact} />
 
         {/* Dynamic Project Need Matcher & Interactive Wizard */}
         <NeedMatcher onTransferToContact={handleTransferToContact} />
 
-        {/* Real Portfolio & Live Projects */}
+        {/* Visual Portfolio with Interactive Browser Screen Mockups */}
         <Portfolio />
 
-        {/* Methodology (Cómo Trabajo) */}
+        {/* Methodology (Cómo Trabajamos) */}
         <Methodology />
 
-        {/* About Nortcode (Profile, DAW, DAM, STI) */}
+        {/* About Nortcode (Profile, Official DAW, DAM, STI qualifications) */}
         <About />
 
         {/* Contact Section & Direct Resend Email Integration */}

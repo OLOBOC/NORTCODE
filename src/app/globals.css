@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-primary: #08090a;
-  --bg-surface: #0d0f12;
-  --bg-card: #12151b;
-  --border-color: #202530;
-  --accent-cyan: #00f0ff;
-  --accent-blue: #3b82f6;
+:root, .dark {
+  --brand-bg: #08090a;
+  --brand-surface: #0e1117;
+  --brand-card: #131720;
+  --brand-elevated: #1a202c;
+  --brand-border: #222938;
+  --brand-border-light: #2d3748;
+  --brand-text: #f8fafc;
+  --brand-muted: #94a3b8;
+  --brand-dim: #64748b;
+  color-scheme: dark;
+}
+
+.light {
+  --brand-bg: #f8fafc;
+  --brand-surface: #ffffff;
+  --brand-card: #f1f5f9;
+  --brand-elevated: #e2e8f0;
+  --brand-border: #e2e8f0;
+  --brand-border-light: #cbd5e1;
+  --brand-text: #0f172a;
+  --brand-muted: #475569;
+  --brand-dim: #64748b;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: #f3f4f6;
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
@@ -36,35 +53,42 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090a;
+  background: var(--brand-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f242e;
+  background: var(--brand-border);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2e3646;
+  background: var(--brand-border-light);
 }
 
-/* Subtle Technical Grid Background */
+/* Technical Subtle Grid Background */
 .bg-tech-grid {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(120, 140, 180, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 140, 180, 0.05) 1px, transparent 1px);
 }
 
-.bg-radial-gradient {
+.dark .bg-radial-gradient {
   background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, rgba(8, 9, 10, 0) 70%);
 }
 
-.bg-radial-glow {
+.light .bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+.dark .bg-radial-glow {
   background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, rgba(8, 9, 10, 0) 65%);
 }
 
-/* Terminal Monospace Code Styling */
+.light .bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.06) 0%, rgba(248, 250, 252, 0) 65%);
+}
+
 .code-panel {
   font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
 }

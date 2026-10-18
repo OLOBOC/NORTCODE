@@ -98,10 +98,10 @@ export default function Footer({ onOpenLegalModal }) {
             <div className="pt-2">
               <a
                 href="mailto:oloboc.digitalbusiness@gmail.com"
-                className="inline-flex items-center gap-2 text-xs font-mono text-brand-cyan hover:underline"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-card hover:bg-brand-elevated border border-brand-border text-xs font-medium text-brand-text hover:text-brand-cyan transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
-                <span>oloboc.digitalbusiness@gmail.com</span>
+                <span>Escribir por Correo Electrónico ↗</span>
               </a>
             </div>
           </div>
