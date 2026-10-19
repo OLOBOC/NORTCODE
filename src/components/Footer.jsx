@@ -1,141 +1,95 @@
 'use client';
 
-import { ArrowUp, Mail, Send } from 'lucide-react';
+import { Send, ArrowUp, MapPin } from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
 
 export default function Footer({ onOpenLegalModal }) {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const navLinks = [
+    { label: 'Soluciones Web', href: '#servicios' },
+    { label: 'Proyectos Reales', href: '#proyectos' },
+    { label: 'Configurador', href: '#configurador' },
+    { label: 'Auditoría Gratis', href: '#auditoria' },
+    { label: 'Sobre Nortcode', href: '#sobre-nortcode' },
+    { label: 'Contacto', href: '#contacto' },
+  ];
 
   return (
-    <footer className="bg-brand-surface border-t border-brand-border text-brand-muted text-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Brand Col */}
-          <div className="lg:col-span-5 space-y-4">
+    <footer className="bg-brand-card border-t border-brand-border text-brand-muted text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-10">
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          {/* Brand */}
+          <div className="space-y-4">
             <NortcodeLogo size="md" showBadge={false} />
-
-            <p className="text-xs text-brand-dim max-w-sm leading-relaxed">
-              Estudio digital independiente especializado en desarrollo web a medida, digitalización y rendimiento extremo. Soluciones económicas y profesionales para cada bolsillo.
+            <p className="text-xs text-brand-dim max-w-xs leading-relaxed">
+              Estudio digital independiente especializado en desarrollo web a medida, digitalización y rendimiento extremo. Soluciones para cada presupuesto.
             </p>
-
-            <div className="pt-1 flex items-center gap-3 font-mono text-[11px] text-brand-dim">
-              <span className="flex items-center gap-1.5 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                SERVICIOS ONLINE EN TODA ESPAÑA
-              </span>
-              <span>•</span>
-              <span>UE</span>
+            <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
+              <span>Disponible · España & Toda la UE</span>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-3 space-y-3">
-            <div className="font-mono text-brand-text text-xs uppercase tracking-wider font-bold">
-              Navegación
-            </div>
+          {/* Navigation */}
+          <div className="space-y-3">
+            <div className="font-mono text-brand-text text-[11px] uppercase tracking-widest font-bold">Navegación</div>
             <ul className="space-y-2">
-              <li>
-                <a href="#inicio" className="hover:text-brand-cyan transition-colors">Inicio</a>
-              </li>
-              <li>
-                <a href="#servicios" className="hover:text-brand-cyan transition-colors">Soluciones Web</a>
-              </li>
-              <li>
-                <a href="#simulador" className="hover:text-brand-cyan transition-colors">Configurador de Proyecto</a>
-              </li>
-              <li>
-                <a href="#auditoria" className="hover:text-brand-cyan transition-colors">Auditoría Gratuita</a>
-              </li>
-              <li>
-                <a href="#proyectos" className="hover:text-brand-cyan transition-colors">Casos Reales & Demos</a>
-              </li>
-              <li>
-                <a href="#sobre-nortcode" className="hover:text-brand-cyan transition-colors">Sobre Nortcode (Omar)</a>
-              </li>
-              <li>
-                <a href="#contacto" className="hover:text-brand-cyan transition-colors">Solicitar Presupuesto</a>
-              </li>
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="hover:text-brand-cyan transition-colors hover:pl-1 duration-200 inline-block">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal Links */}
-          <div className="lg:col-span-4 space-y-3">
-            <div className="font-mono text-brand-text text-xs uppercase tracking-wider font-bold">
-              Cumplimiento Legal (España / UE)
-            </div>
-            <p className="text-[11px] text-brand-dim leading-relaxed">
-              Adaptado rigurosamente a la normativa de protección de datos (RGPD, LOPDGDD) y comercio electrónico (LSSI-CE).
-            </p>
-            <ul className="space-y-2 pt-1">
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegalModal('aviso')}
-                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
-                >
-                  Aviso Legal (LSSI-CE)
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegalModal('privacidad')}
-                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
-                >
-                  Política de Privacidad (RGPD)
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenLegalModal('cookies')}
-                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
-                >
-                  Política de Cookies
-                </button>
-              </li>
+          {/* Legal + CTA */}
+          <div className="space-y-4">
+            <div className="font-mono text-brand-text text-[11px] uppercase tracking-widest font-bold">Legal (España / UE)</div>
+            <ul className="space-y-2">
+              {[
+                { label: 'Aviso Legal (LSSI-CE)', key: 'aviso' },
+                { label: 'Política de Privacidad (RGPD)', key: 'privacidad' },
+                { label: 'Política de Cookies', key: 'cookies' },
+              ].map((item) => (
+                <li key={item.key}>
+                  <button
+                    type="button"
+                    onClick={() => onOpenLegalModal(item.key)}
+                    className="hover:text-brand-cyan text-left transition-colors cursor-pointer hover:pl-1 duration-200 inline-block"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
 
-            <div className="pt-2 flex flex-wrap gap-2">
-              <a
-                href="#contacto"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-cyan text-black hover:bg-white text-xs font-semibold transition-colors"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>Solicitar Presupuesto</span>
-              </a>
-
-              <a
-                href="mailto:oloboc.digitalbusiness@gmail.com"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-brand-card hover:bg-brand-elevated text-brand-text border border-brand-border text-xs font-semibold transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-brand-cyan" />
-                <span>Correo Oficial</span>
-              </a>
-            </div>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-cyan text-black text-xs font-bold hover:bg-white transition-colors"
+            >
+              <Send className="w-3.5 h-3.5" />
+              Solicitar Presupuesto
+            </a>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-brand-dim">
-          <div>
-            &copy; {new Date().getFullYear()} NORTCODE. Todos los derechos reservados.
-          </div>
-
-          <div className="flex items-center gap-6">
-            <span className="text-brand-dim">Ingeniería & Diseño Digital · España</span>
-
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-1 hover:text-white transition-colors p-1 cursor-pointer"
-              aria-label="Volver arriba"
-            >
-              <span>Volver arriba</span>
-              <ArrowUp className="w-3.5 h-3.5" />
-            </button>
-          </div>
+          <div>© {new Date().getFullYear()} NORTCODE · Ingeniería & Diseño Digital · España</div>
+          <button
+            onClick={scrollToTop}
+            className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+            aria-label="Volver al inicio"
+          >
+            <span>Volver arriba</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </footer>

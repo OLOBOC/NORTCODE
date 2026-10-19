@@ -187,7 +187,7 @@ Hola Omar, he configurado este proyecto y me gustaría que me envíes una propue
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
                 <p className="text-[10px] text-center text-brand-dim mt-2 font-mono">
-                  Envío directo a oloboc.digitalbusiness@gmail.com
+                   Recibirás respuesta personalizada en menos de 24h laborables
                 </p>
               </div>
             </div>

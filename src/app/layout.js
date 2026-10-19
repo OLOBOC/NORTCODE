@@ -117,7 +117,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               html, body {
-                background-color: var(--brand-bg, #08090a);
+                background-color: var(--brand-bg, #060708);
                 color: var(--brand-text, #f3f4f6);
                 margin: 0;
                 padding: 0;
