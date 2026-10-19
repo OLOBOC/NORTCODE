@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Smartphone, Monitor, CheckCircle2, ArrowRight, Sparkles, MessageCircle, Phone, Star, ShieldCheck, Zap, Eye, RefreshCw } from 'lucide-react';
+import { Smartphone, Monitor, CheckCircle2, ArrowRight, Sparkles, Mail, Star, ShieldCheck, Eye } from 'lucide-react';
 
 export default function WebSimulator({ onTransferToContact }) {
   const [sector, setSector] = useState('auto'); // 'auto' | 'detail' | 'local' | 'pro' | 'upgrade'
@@ -12,14 +12,14 @@ export default function WebSimulator({ onTransferToContact }) {
       id: 'auto',
       title: 'Concesionarios & Catálogo de Vehículos',
       badge: 'AUTOMOCIÓN',
-      tagline: 'Tu catálogo dinámico de stock con navegación ágil y botón directo de WhatsApp.',
+      tagline: 'Tu catálogo dinámico de stock con navegación ágil y contacto directo.',
       investment: 'Económica y ajustada a tu volumen de stock (sin comisiones)',
       timeframe: '5 - 10 días laborables',
-      conversionHook: 'El comprador ve los coches en su teléfono y pulsa "Consultar por WhatsApp" en 3 segundos.',
+      conversionHook: 'El comprador ve los coches en su teléfono y pulsa "Contactar" en 3 segundos.',
       features: [
         'Filtro dinámico de stock de vehículos con búsqueda rápida',
         'Fichas técnicas con fotografías de alta resolución sin ralentizar la web',
-        'Botón flotante de WhatsApp y llamada directa a 1 toque',
+        'Botones de contacto y llamada directa a 1 toque',
         'Ubicación en Google Maps y reseñas de clientes integradas',
       ],
       mockup: {
@@ -27,7 +27,7 @@ export default function WebSimulator({ onTransferToContact }) {
         heroTitle: 'Vehículos de ocasión garantizados y entrega inmediata',
         heroSubtitle: 'Stock exclusivo revisado con garantía europea. Trato directo y transparencia absoluta.',
         ctaText: 'Explorar Stock Disponible',
-        badgeAlert: '🔥 NUEVO STOCK ACTUALIZADO',
+        badgeAlert: 'STOCK ACTUALIZADO 2026',
         rating: '5.0 ★ (140 reseñas verificadas)',
         items: [
           { name: 'Mercedes-Benz A200 AMG', detail: 'Automático · Diésel · Garantía 24M', badge: 'DISPONIBLE' },
@@ -46,7 +46,7 @@ export default function WebSimulator({ onTransferToContact }) {
       features: [
         'Galería fotográfica de tratamientos y resultados antes/después',
         'Catálogo claro de servicios (cerámicos 9H, pulido, interiores)',
-        'Botón directo para reserva de cita previa sin intermediarios',
+        'Botón directo para solicitud de cita previa sin intermediarios',
         'Diseño oscuro premium que transmite exclusividad absoluta',
       ],
       mockup: {
@@ -54,7 +54,7 @@ export default function WebSimulator({ onTransferToContact }) {
         heroTitle: 'Protección Cerámica 9H & Detailing de Alta Gama',
         heroSubtitle: 'Tratamientos hidrofóbicos y corrección de pintura con acabado espejo garantizado.',
         ctaText: 'Solicitar Presupuesto Detailing',
-        badgeAlert: '✨ AGENDA ABIERTA ESTA SEMANA',
+        badgeAlert: 'AGENDA DISPONIBLE ESTA SEMANA',
         rating: '4.9 ★ (88 clientes satisfechos)',
         items: [
           { name: 'Tratamiento Cerámico Multicapa', detail: 'Durabilidad 36 meses · Efecto hidrofóbico', badge: 'POPULAR' },
@@ -64,9 +64,9 @@ export default function WebSimulator({ onTransferToContact }) {
     },
     local: {
       id: 'local',
-      title: 'Restaurantes, Cafeterías & Comercio de Barrio',
+      title: 'Restaurantes, Cafeterías & Comercio Local',
       badge: 'COMERCIO & HOSTELERÍA',
-      tagline: 'Carta digital instantánea sin descargar PDFs pesados y reserva de mesa por WhatsApp.',
+      tagline: 'Carta digital instantánea sin descargar PDFs pesados y reserva directa.',
       investment: 'Muy económica, pensada para que cualquier negocio local tenga presencia seria',
       timeframe: '4 - 7 días laborables',
       conversionHook: 'El cliente abre el menú en su móvil sin esperar, ve tus platos y llama para reservar.',
@@ -81,7 +81,7 @@ export default function WebSimulator({ onTransferToContact }) {
         heroTitle: 'Cocina tradicional elaborada con producto fresco local',
         heroSubtitle: 'Disfruta de nuestros menús del día, especialidades de temporada y terraza.',
         ctaText: 'Ver Menú & Carta Digital',
-        badgeAlert: '🍴 MENÚ SEMANAL DISPONIBLE',
+        badgeAlert: 'MENÚ SEMANAL DISPONIBLE',
         rating: '4.8 ★ (230 opiniones)',
         items: [
           { name: 'Menú Degustación Completo', detail: 'Entrante + Principal + Postre artesano', badge: 'RECOMENDADO' },
@@ -108,7 +108,7 @@ export default function WebSimulator({ onTransferToContact }) {
         heroTitle: 'Soluciones técnicas profesionales con presupuesto cerrado',
         heroSubtitle: 'Más de 10 años resolviendo proyectos con máxima transparencia, rigor y plazos garantizados.',
         ctaText: 'Solicitar Propuesta Técnica',
-        badgeAlert: '💼 ATENCIÓN DIRECTA Y CERCANA',
+        badgeAlert: 'ATENCIÓN DIRECTA Y CERCANA',
         rating: '4.9 ★ (95 valoraciones)',
         items: [
           { name: 'Consultoría & Diagnóstico', detail: 'Revisión exhaustiva y plan de acción', badge: 'SIN COSTE' },
@@ -135,7 +135,7 @@ export default function WebSimulator({ onTransferToContact }) {
         heroTitle: 'Tu web actual, pero 10 veces más rápida y atractiva',
         heroSubtitle: 'Olvídate de caídas de servidor y constructores pesados. Código limpio y ligero.',
         ctaText: 'Comprobar Velocidad Actual',
-        badgeAlert: '⚡ VELOCIDAD EXTREMA < 0.4S',
+        badgeAlert: 'VELOCIDAD EXTREMA < 0.4S',
         rating: '100 / 100 Google PageSpeed',
         items: [
           { name: 'Auditoría y Migración Limpia', detail: 'Cero pérdida de datos ni posicionamiento', badge: '100% SEGURO' },
@@ -148,11 +148,11 @@ export default function WebSimulator({ onTransferToContact }) {
   const current = sectorTemplates[sector];
 
   const handleSelectTemplate = () => {
-    const msg = `[CONFIGURADOR NORTCODE]:
-- Modalidad seleccionada: ${current.title}
-- Formato preferido: ${device === 'mobile' ? 'Optimizado para Móviles' : 'Escritorio & Móvil'}
+    const msg = `[SOLICITUD DESDE CONFIGURADOR]:
+- Modelo de proyecto: ${current.title}
+- Formato preferido: ${device === 'mobile' ? 'Optimizado para Smartphones' : 'Escritorio & Móvil'}
 
-Hola Omar, he visto este modelo de web en el configurador y me gustaría que me des una propuesta económica y hablar de los detalles para mi negocio.`;
+Hola Omar, he probado este modelo en el configurador y me gustaría que me envíes una propuesta por correo electrónico con detalles y opciones de presupuesto para mi caso.`;
 
     if (onTransferToContact) {
       onTransferToContact({
@@ -168,24 +168,24 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
   };
 
   return (
-    <section id="simulador" className="py-24 bg-brand-bg relative border-t border-brand-border/60 overflow-hidden">
+    <section id="simulador" className="py-28 bg-brand-bg relative border-t border-brand-border/60 overflow-hidden">
       {/* Decorative gradient blur */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-cyan/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan shadow-sm">
             <Eye className="w-3.5 h-3.5" />
             <span>CONFIGURADOR VISUAL EN TIEMPO REAL</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight">
-            Comprueba cómo transformamos la presencia de tu negocio
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight leading-tight">
+            Mira cómo quedará la presencia de tu negocio
           </h2>
 
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed">
-            Elige tu sector o si deseas mejorar una web existente lenta. Sin tecnicismos: comprueba el acabado visual y solicita una solución económica adaptada a tus necesidades.
+            Elige tu sector o si deseas modernizar una web lenta. Comprueba el acabado visual y solicita un presupuesto económico adaptado a tu bolsillo directamente por correo.
           </p>
         </div>
 
@@ -214,15 +214,15 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
           ))}
         </div>
 
-        {/* Main Interactive Stage: Simulator Frame + Commercial Details */}
+        {/* Main Interactive Stage */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Interactive Device Mockup Frame */}
+          {/* Left Column: Simulated Device */}
           <div className="lg:col-span-7 flex flex-col items-center">
-            {/* Device Switcher Controls */}
+            {/* Device Switcher */}
             <div className="flex items-center gap-2 mb-4 p-1.5 rounded-2xl bg-brand-surface border border-brand-border shadow-sm">
               <button
                 onClick={() => setDevice('mobile')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   device === 'mobile'
                     ? 'bg-brand-card text-brand-cyan border border-brand-cyan/30 shadow-sm'
                     : 'text-brand-muted hover:text-brand-text'
@@ -233,7 +233,7 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
               </button>
               <button
                 onClick={() => setDevice('desktop')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   device === 'desktop'
                     ? 'bg-brand-card text-brand-cyan border border-brand-cyan/30 shadow-sm'
                     : 'text-brand-muted hover:text-brand-text'
@@ -244,13 +244,12 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
               </button>
             </div>
 
-            {/* Simulated Device Frame */}
+            {/* Device Frame */}
             <div
               className={`transition-all duration-300 w-full overflow-hidden bg-brand-card border border-brand-border shadow-2xl rounded-3xl ${
                 device === 'mobile' ? 'max-w-sm border-[6px] border-slate-800' : 'max-w-2xl border-4 border-slate-800'
               }`}
             >
-              {/* Device Header Bar */}
               <div className="px-4 py-2.5 bg-slate-900 border-b border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
@@ -263,9 +262,7 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                 <span className="text-[10px] text-emerald-400 font-bold">0.4s</span>
               </div>
 
-              {/* Simulated Web Page Content */}
               <div className="p-5 sm:p-6 bg-gradient-to-b from-brand-bg via-brand-surface to-brand-bg space-y-4 select-none">
-                {/* Navbar Mock */}
                 <div className="flex items-center justify-between pb-3 border-b border-brand-border/60">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-brand-cyan" />
@@ -278,12 +275,10 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                   </span>
                 </div>
 
-                {/* Micro Alert Banner */}
                 <div className="px-3 py-1.5 rounded-lg bg-brand-card border border-brand-border text-[10px] text-brand-cyan font-mono font-medium text-center">
                   {current.mockup.badgeAlert}
                 </div>
 
-                {/* Hero Section */}
                 <div className="space-y-2 text-center py-2">
                   <div className="flex items-center justify-center gap-1 text-[11px] text-amber-400 font-semibold">
                     <Star className="w-3.5 h-3.5 fill-current" />
@@ -296,18 +291,16 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                     {current.mockup.heroSubtitle}
                   </p>
 
-                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
-                    <button className="w-full sm:w-auto px-4 py-2 text-xs font-bold text-black bg-brand-cyan rounded-xl shadow-md">
+                  <div className="pt-2 flex items-center justify-center gap-2">
+                    <button className="px-4 py-2 text-xs font-bold text-black bg-brand-cyan rounded-xl shadow-md">
                       {current.mockup.ctaText}
                     </button>
-                    <button className="w-full sm:w-auto px-3.5 py-2 text-xs font-semibold text-brand-text bg-brand-surface border border-brand-border rounded-xl flex items-center justify-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-emerald-500" />
-                      <span>Llamar Directo</span>
+                    <button className="px-3.5 py-2 text-xs font-semibold text-brand-text bg-brand-surface border border-brand-border rounded-xl">
+                      <span>Contactar</span>
                     </button>
                   </div>
                 </div>
 
-                {/* Simulated Content Cards */}
                 <div className="space-y-2 pt-2 border-t border-brand-border/60">
                   <div className="text-[10px] font-mono text-brand-dim uppercase tracking-wider">
                     DESTACADOS EN TIEMPO REAL:
@@ -324,24 +317,15 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                     ))}
                   </div>
                 </div>
-
-                {/* WhatsApp Action Simulation */}
-                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4 text-emerald-400" />
-                    <span className="text-[11px] text-emerald-400 font-semibold">Respuesta inmediata por WhatsApp</span>
-                  </div>
-                  <span className="text-[10px] text-emerald-300 font-mono">1 toque</span>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Commercial Solution Details */}
+          {/* Right Column: Commercial Details & Transfer to Form */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-xs font-mono text-brand-cyan uppercase tracking-wider font-semibold">
-                PLAN & CARACTERÍSTICAS TÉCNICAS
+                PLAN & CARACTERÍSTICAS
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-brand-text tracking-tight">
                 {current.title}
@@ -351,7 +335,6 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
               </p>
             </div>
 
-            {/* Solution Card with No Fixed Price */}
             <div className="p-6 rounded-3xl bg-brand-surface border border-brand-border shadow-xl space-y-4">
               <div className="space-y-3 pb-3 border-b border-brand-border">
                 <div>
@@ -368,13 +351,11 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                 </div>
               </div>
 
-              {/* Conversion hook benefit */}
               <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-xs text-brand-text flex items-start gap-2.5">
                 <Sparkles className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
                 <span className="leading-snug">{current.conversionHook}</span>
               </div>
 
-              {/* Features list */}
               <div className="space-y-2 pt-1">
                 <div className="text-xs font-mono text-brand-dim uppercase">Qué incluye esta solución:</div>
                 {current.features.map((feat, idx) => (
@@ -385,24 +366,14 @@ Hola Omar, he visto este modelo de web en el configurador y me gustaría que me 
                 ))}
               </div>
 
-              {/* Direct Actions: WhatsApp + Form Transfer */}
-              <div className="pt-2 space-y-2">
-                <a
-                  href={`https://wa.me/34600000000?text=Hola%20Omar,%20estoy%20en%20el%20configurador%20de%20Nortcode%20y%20quiero%20pedir%20propuesta%20para:%20${encodeURIComponent(current.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg shadow-emerald-950/40 group"
-                >
-                  <MessageCircle className="w-4 h-4 transition-transform group-hover:scale-110" />
-                  <span>Pedir propuesta por WhatsApp para este modelo</span>
-                </a>
-
+              <div className="pt-2">
                 <button
                   onClick={handleSelectTemplate}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border rounded-xl transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 text-xs font-bold text-brand-bg bg-brand-cyan hover:bg-white rounded-xl transition-all shadow-lg shadow-brand-cyan/20 group"
                 >
-                  <span>Rellenar formulario con estos datos</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <Mail className="w-4 h-4" />
+                  <span>Pedir presupuesto por correo para este modelo</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </div>

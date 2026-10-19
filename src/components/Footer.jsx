@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowUp, Globe, Shield, MessageCircle, Send } from 'lucide-react';
+import { ArrowUp, Mail, Send } from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
 
 export default function Footer({ onOpenLegalModal }) {
@@ -17,7 +17,7 @@ export default function Footer({ onOpenLegalModal }) {
             <NortcodeLogo size="md" showBadge={false} />
 
             <p className="text-xs text-brand-dim max-w-sm leading-relaxed">
-              Estudio digital especializado en páginas web profesionales y económicas para todo tipo de negocios, digitalización y automatización con IA. Sin costes inflados ni cuotas sorpresa.
+              Estudio digital independiente especializado en desarrollo web a medida, digitalización y rendimiento extremo. Soluciones económicas y profesionales para cada bolsillo.
             </p>
 
             <div className="pt-1 flex items-center gap-3 font-mono text-[11px] text-brand-dim">
@@ -40,10 +40,10 @@ export default function Footer({ onOpenLegalModal }) {
                 <a href="#inicio" className="hover:text-brand-cyan transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="#servicios" className="hover:text-brand-cyan transition-colors">Soluciones & Precios</a>
+                <a href="#servicios" className="hover:text-brand-cyan transition-colors">Soluciones Web</a>
               </li>
               <li>
-                <a href="#simulador" className="hover:text-brand-cyan transition-colors">Simulador Visual Web</a>
+                <a href="#simulador" className="hover:text-brand-cyan transition-colors">Configurador de Proyecto</a>
               </li>
               <li>
                 <a href="#auditoria" className="hover:text-brand-cyan transition-colors">Auditoría Gratuita</a>
@@ -66,7 +66,7 @@ export default function Footer({ onOpenLegalModal }) {
               Cumplimiento Legal (España / UE)
             </div>
             <p className="text-[11px] text-brand-dim leading-relaxed">
-              Adaptado rigurosamente a la normativa europea de protección de datos (RGPD, LOPDGDD) y comercio electrónico (LSSI-CE).
+              Adaptado rigurosamente a la normativa de protección de datos (RGPD, LOPDGDD) y comercio electrónico (LSSI-CE).
             </p>
             <ul className="space-y-2 pt-1">
               <li>
@@ -104,17 +104,15 @@ export default function Footer({ onOpenLegalModal }) {
                 className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-cyan text-black hover:bg-white text-xs font-semibold transition-colors"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>Pedir Presupuesto</span>
+                <span>Solicitar Presupuesto</span>
               </a>
 
               <a
-                href="https://wa.me/34600000000?text=Hola%20Omar,%20quiero%20informaci%C3%B3n%20para%20un%20proyecto"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-colors"
+                href="mailto:oloboc.digitalbusiness@gmail.com"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-brand-card hover:bg-brand-elevated text-brand-text border border-brand-border text-xs font-semibold transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp</span>
+                <Mail className="w-3.5 h-3.5 text-brand-cyan" />
+                <span>Correo Oficial</span>
               </a>
             </div>
           </div>
