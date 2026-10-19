@@ -4,10 +4,9 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
+import WebSimulator from '@/components/WebSimulator';
 import WebAuditTool from '@/components/WebAuditTool';
-import NeedMatcher from '@/components/NeedMatcher';
 import Portfolio from '@/components/Portfolio';
-import Methodology from '@/components/Methodology';
 import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -37,44 +36,41 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
-        {/* Hero Section (Conversion focused, clean credentials) */}
+        {/* 1. Hero Section (Comercial, claro, sin tecnicismos excesivos) */}
         <Hero />
 
-        {/* Services & Three Pillars (With expanded multi-scenario comparators) */}
+        {/* 2. Soluciones & Precios (Web, Digitalización, Automatización + Comparador Antes/Después) */}
         <Services />
 
-        {/* High-Conversion Lead Magnet: Web Audit & Loss Diagnostic Tool */}
+        {/* 3. Perspectiva Visual & Simulador Interactivo de Web */}
+        <WebSimulator onTransferToContact={handleTransferToContact} />
+
+        {/* 4. Lead Magnet: Auditoría Rápida & Pérdida de Clientes por Lentitud */}
         <WebAuditTool onTransferToContact={handleTransferToContact} />
 
-        {/* Dynamic Project Need Matcher & Interactive Wizard */}
-        <NeedMatcher onTransferToContact={handleTransferToContact} />
-
-        {/* Visual Portfolio with Interactive Browser Screen Mockups */}
+        {/* 5. Portfolio Visual con Enlaces en Vivo (Audax Motors, DFR Xtra Detail, NailsWell) */}
         <Portfolio />
 
-        {/* Methodology (Cómo Trabajamos) */}
-        <Methodology />
-
-        {/* About Nortcode (Profile, Official DAW, DAM, STI qualifications) */}
+        {/* 6. Sobre Nortcode con la Fotografía del Fundador (Omar) & Titulaciones Oficiales */}
         <About />
 
-        {/* Contact Section & Direct Resend Email Integration */}
+        {/* 7. Formulario de Presupuesto Seguro & Acceso Directo a WhatsApp */}
         <ContactForm
           initialData={contactInitialData}
           onOpenLegalModal={openLegalModal}
         />
       </main>
 
-      {/* Footer */}
+      {/* Footer con Accesos Legales */}
       <Footer onOpenLegalModal={openLegalModal} />
 
-      {/* Modals for Legal Compliance (LSSI, RGPD, Cookies) */}
+      {/* Modals for Legal Compliance (LSSI-CE, RGPD, Cookies) */}
       <LegalModals
         activeModal={activeLegalModal}
         onClose={closeLegalModal}
       />
 
-      {/* Cookie Banner */}
+      {/* Cookie Banner RGPD */}
       <CookieBanner
         onOpenCookiesPolicy={() => openLegalModal('cookies')}
       />

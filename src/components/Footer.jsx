@@ -1,6 +1,6 @@
 'use client';
 
-import { Terminal, Shield, ArrowUp, Mail, Globe, Code2 } from 'lucide-react';
+import { ArrowUp, Globe, Shield, MessageCircle, Send } from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
 
 export default function Footer({ onOpenLegalModal }) {
@@ -17,22 +17,22 @@ export default function Footer({ onOpenLegalModal }) {
             <NortcodeLogo size="md" showBadge={false} />
 
             <p className="text-xs text-brand-dim max-w-sm leading-relaxed">
-              Estudio digital de desarrollo web, digitalización y automatización con IA. Ingeniería de software limpia, soluciones sólidas y cero humo.
+              Estudio digital especializado en páginas web profesionales y económicas para todo tipo de negocios, digitalización y automatización con IA. Sin costes inflados ni cuotas sorpresa.
             </p>
 
             <div className="pt-1 flex items-center gap-3 font-mono text-[11px] text-brand-dim">
               <span className="flex items-center gap-1.5 text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                SERVICIOS ONLINE
+                SERVICIOS ONLINE EN TODA ESPAÑA
               </span>
               <span>•</span>
-              <span>ESPAÑA / UE</span>
+              <span>UE</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="font-mono text-white text-xs uppercase tracking-wider">
+            <div className="font-mono text-brand-text text-xs uppercase tracking-wider font-bold">
               Navegación
             </div>
             <ul className="space-y-2">
@@ -40,37 +40,40 @@ export default function Footer({ onOpenLegalModal }) {
                 <a href="#inicio" className="hover:text-brand-cyan transition-colors">Inicio</a>
               </li>
               <li>
-                <a href="#servicios" className="hover:text-brand-cyan transition-colors">Tres Pilares Técnicos</a>
+                <a href="#servicios" className="hover:text-brand-cyan transition-colors">Soluciones & Precios</a>
               </li>
               <li>
-                <a href="#calculador" className="hover:text-brand-cyan transition-colors">Need Matcher & Calculador</a>
+                <a href="#simulador" className="hover:text-brand-cyan transition-colors">Simulador Visual Web</a>
               </li>
               <li>
-                <a href="#proyectos" className="hover:text-brand-cyan transition-colors">Proyectos Reales & Demos</a>
+                <a href="#auditoria" className="hover:text-brand-cyan transition-colors">Auditoría Gratuita</a>
               </li>
               <li>
-                <a href="#metodologia" className="hover:text-brand-cyan transition-colors">Cómo Trabajo</a>
+                <a href="#proyectos" className="hover:text-brand-cyan transition-colors">Casos Reales & Demos</a>
               </li>
               <li>
-                <a href="#sobre-nortcode" className="hover:text-brand-cyan transition-colors">Sobre Nortcode (DAW/DAM/STI)</a>
+                <a href="#sobre-nortcode" className="hover:text-brand-cyan transition-colors">Sobre Nortcode (Omar)</a>
+              </li>
+              <li>
+                <a href="#contacto" className="hover:text-brand-cyan transition-colors">Solicitar Presupuesto</a>
               </li>
             </ul>
           </div>
 
           {/* Legal Links */}
           <div className="lg:col-span-4 space-y-3">
-            <div className="font-mono text-white text-xs uppercase tracking-wider">
+            <div className="font-mono text-brand-text text-xs uppercase tracking-wider font-bold">
               Cumplimiento Legal (España / UE)
             </div>
             <p className="text-[11px] text-brand-dim leading-relaxed">
-              Adaptado a la normativa europea de protección de datos (RGPD) y comercio electrónico (LSSI-CE).
+              Adaptado rigurosamente a la normativa europea de protección de datos (RGPD, LOPDGDD) y comercio electrónico (LSSI-CE).
             </p>
             <ul className="space-y-2 pt-1">
               <li>
                 <button
                   type="button"
                   onClick={() => onOpenLegalModal('aviso')}
-                  className="hover:text-brand-cyan text-left transition-colors"
+                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
                 >
                   Aviso Legal (LSSI-CE)
                 </button>
@@ -79,29 +82,39 @@ export default function Footer({ onOpenLegalModal }) {
                 <button
                   type="button"
                   onClick={() => onOpenLegalModal('privacidad')}
-                  className="hover:text-brand-cyan text-left transition-colors"
+                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
                 >
-                  Política de Privacidad (RGPD / LOPDGDD)
+                  Política de Privacidad (RGPD)
                 </button>
               </li>
               <li>
                 <button
                   type="button"
                   onClick={() => onOpenLegalModal('cookies')}
-                  className="hover:text-brand-cyan text-left transition-colors"
+                  className="hover:text-brand-cyan text-left transition-colors cursor-pointer"
                 >
                   Política de Cookies
                 </button>
               </li>
             </ul>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap gap-2">
               <a
-                href="mailto:oloboc.digitalbusiness@gmail.com"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-card hover:bg-brand-elevated border border-brand-border text-xs font-medium text-brand-text hover:text-brand-cyan transition-colors"
+                href="#contacto"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-cyan text-black hover:bg-white text-xs font-semibold transition-colors"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Escribir por Correo Electrónico ↗</span>
+                <Send className="w-3.5 h-3.5" />
+                <span>Pedir Presupuesto</span>
+              </a>
+
+              <a
+                href="https://wa.me/34600000000?text=Hola%20Omar,%20quiero%20informaci%C3%B3n%20para%20un%20proyecto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>
@@ -128,7 +141,7 @@ export default function Footer({ onOpenLegalModal }) {
 
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1 hover:text-white transition-colors p-1"
+              className="flex items-center gap-1 hover:text-white transition-colors p-1 cursor-pointer"
               aria-label="Volver arriba"
             >
               <span>Arriba</span>

@@ -74,7 +74,7 @@ const task = await n8n.dispatch({
       subtitle: 'Email Resend / Telegram',
       icon: BellRing,
       color: 'border-purple-500/50 text-purple-400',
-      description: 'Envío instantáneo al correo oficial (oloboc.digitalbusiness@gmail.com) y confirmación automática al cliente.',
+      description: 'Envío instantáneo al buzón oficial del estudio y confirmación automática al cliente.',
       details: {
         tipo: 'Resend API Transaccional',
         latencia: 'Menos de 2 segundos',
@@ -82,7 +82,7 @@ const task = await n8n.dispatch({
       },
       codeSnippet: `// Notificación despachada
 {
-  "to": "oloboc.digitalbusiness@gmail.com",
+  "channel": "direct_lead_inbox",
   "delivery_status": "DELIVERED",
   "client_confirmation": "SENT"
 }`

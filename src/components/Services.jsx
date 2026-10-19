@@ -1,12 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Globe, RefreshCw, Cpu, CheckCircle2, ArrowRight, Smartphone, Monitor, Gauge, Shield, Database } from 'lucide-react';
+import { Globe, RefreshCw, Cpu, CheckCircle2, ArrowRight, Smartphone, Monitor, Gauge, Shield, Database, Sparkles, MessageSquare, Zap, Clock } from 'lucide-react';
 import BeforeAfterComparator from './BeforeAfterComparator';
-import AutomationFlow from './AutomationFlow';
 
 export default function Services() {
-  const [devicePreview, setDevicePreview] = useState('desktop');
+  const [devicePreview, setDevicePreview] = useState('mobile');
 
   return (
     <section id="servicios" className="py-24 bg-brand-bg relative border-t border-brand-border/60">
@@ -15,167 +14,190 @@ export default function Services() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
-            <span>TRES PILARES TÉCNICOS</span>
+            <span>SOLUCIONES DIGITALES</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Ingeniería digital pensada para resolver problemas reales
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight">
+            Lo que Nortcode hace por tu negocio
           </h2>
-          <p className="text-base text-brand-muted mt-3 leading-relaxed">
-            Eliminamos intermediarios, plantillas pesadas y código innecesario. Diseñamos infraestructura digital sólida para que la tecnología trabaje directamente para el beneficio de tu negocio.
+          <p className="text-base sm:text-lg text-brand-muted mt-3 leading-relaxed">
+            Sin rodeos técnicos ni presupuestos inflados. Soluciones prácticas diseñadas para que ganes más clientes y ahorres horas de trabajo manual cada semana.
           </p>
         </div>
 
-        {/* ============================================================== */}
-        {/* PILAR 01: DESARROLLO WEB & PRESENCIA DIGITAL */}
-        {/* ============================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-6 space-y-5">
-            <div className="flex items-center gap-2 font-mono text-xs text-brand-cyan">
-              <span className="px-2 py-0.5 rounded bg-brand-cyan/10 border border-brand-cyan/30">01</span>
-              <span>DESARROLLO WEB & RENDIMIENTO EXTREMO</span>
+        {/* 3 Main Commercial Solutions Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Solution 01: Web Design */}
+          <div className="rounded-3xl bg-brand-surface border border-brand-border p-6 sm:p-8 flex flex-col justify-between shadow-xl hover:border-brand-border-light transition-all group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">
+                  SOLUCIÓN 01
+                </span>
+                <span className="text-xs font-mono text-emerald-400 font-semibold">Desde 290€</span>
+              </div>
+
+              <div className="p-3 rounded-2xl bg-brand-card border border-brand-border w-fit text-brand-cyan">
+                <Globe className="w-6 h-6" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-brand-text group-hover:text-brand-cyan transition-colors">
+                Páginas Web & Presencia Digital
+              </h3>
+
+              <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                Creamos tu web corporativa, tienda o catálogo online con un diseño elegante y moderno. Diseñada para que cargue al segundo en el móvil y transmita confianza instantánea.
+              </p>
+
+              <div className="space-y-2 pt-2 border-t border-brand-border/60">
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Optimizada al 100% para smartphones</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Botones directos de llamada y WhatsApp</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Preparada para aparecer en Google</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Propiedad 100% tuya, sin cuotas cautivas</span>
+                </div>
+              </div>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Webs y plataformas rápidas, elegantes y pensadas para convertir
-            </h3>
-            <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
-              No usamos constructores visuales lentos ni plantillas sobrecargadas. Programamos con <strong className="text-white">Next.js, React y Tailwind CSS</strong> para lograr tiempos de carga instantáneos, indexación SEO impecable y adaptación fluida a cualquier pantalla.
-            </p>
 
-            <ul className="space-y-2.5 text-xs sm:text-sm text-brand-text">
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>Webs corporativas, portfolios profesionales y landings de alta conversión.</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>Arquitectura SEO técnico estructurada con microdatos Schema.org.</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>Score 95-100 en Google PageSpeed Insights (móvil y escritorio).</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>Propiedad y código 100% tuyos, sin ataduras a plataformas propietarias.</span>
-              </li>
-            </ul>
-
-            <div className="pt-2">
+            <div className="pt-6">
               <a
                 href="#contacto"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cyan hover:text-white transition-colors group"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-bold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border hover:border-brand-cyan/40 rounded-xl transition-all"
               >
-                <span>Solicitar propuesta de desarrollo web</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                <span>Pedir Presupuesto Web</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
 
-          {/* Interactive Web Performance Mockup */}
-          <div className="lg:col-span-6 rounded-2xl bg-brand-surface border border-brand-border p-5 sm:p-6 shadow-xl space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-brand-border text-xs">
-              <div className="flex items-center gap-2 font-mono text-brand-dim">
-                <Gauge className="w-4 h-4 text-emerald-400" />
-                <span>AUDITORÍA EN VIVO (CORE WEB VITALS)</span>
+          {/* Solution 02: Business Digitization */}
+          <div className="rounded-3xl bg-brand-surface border border-brand-border p-6 sm:p-8 flex flex-col justify-between shadow-xl hover:border-brand-border-light transition-all group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
+                  SOLUCIÓN 02
+                </span>
+                <span className="text-xs font-mono text-emerald-400 font-semibold">A Medida</span>
               </div>
-              <div className="inline-flex p-1 rounded-lg bg-brand-bg border border-brand-border">
-                <button
-                  onClick={() => setDevicePreview('desktop')}
-                  className={`p-1.5 rounded transition-all ${
-                    devicePreview === 'desktop' ? 'bg-brand-card text-brand-cyan' : 'text-brand-dim hover:text-white'
-                  }`}
-                  title="Vista Escritorio"
-                  aria-label="Vista de escritorio"
-                >
-                  <Monitor className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setDevicePreview('mobile')}
-                  className={`p-1.5 rounded transition-all ${
-                    devicePreview === 'mobile' ? 'bg-brand-card text-brand-cyan' : 'text-brand-dim hover:text-white'
-                  }`}
-                  title="Vista Móvil"
-                  aria-label="Vista móvil"
-                >
-                  <Smartphone className="w-4 h-4" />
-                </button>
+
+              <div className="p-3 rounded-2xl bg-brand-card border border-brand-border w-fit text-emerald-400">
+                <Database className="w-6 h-6" />
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-brand-text group-hover:text-emerald-400 transition-colors">
+                Digitalización de Procesos
+              </h3>
+
+              <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                Olvídate del caos de Excels desordenados, libretas de papel y datos perdidos. Creamos un sistema sencillo y seguro para gestionar tus clientes, citas y pedidos desde cualquier dispositivo.
+              </p>
+
+              <div className="space-y-2 pt-2 border-t border-brand-border/60">
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Toda la información de tu negocio centralizada</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Acceso seguro desde móvil, tablet u ordenador</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Búsqueda instantánea de clientes e historial</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Ahorro de 10-15 horas al mes en tareas manuales</span>
+                </div>
               </div>
             </div>
 
-            {/* Google Lighthouse 100 Dials */}
-            <div className="grid grid-cols-4 gap-2 text-center py-2">
-              <div className="p-2.5 rounded-xl bg-brand-card border border-emerald-500/30">
-                <div className="text-lg sm:text-xl font-bold font-mono text-emerald-400">100</div>
-                <div className="text-[10px] text-brand-muted mt-0.5">Rendimiento</div>
+            <div className="pt-6">
+              <a
+                href="#contacto"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-bold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border hover:border-emerald-500/40 rounded-xl transition-all"
+              >
+                <span>Digitalizar Mi Negocio</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Solution 03: Automation & AI */}
+          <div className="rounded-3xl bg-brand-surface border border-brand-border p-6 sm:p-8 flex flex-col justify-between shadow-xl hover:border-brand-border-light transition-all group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20 font-bold">
+                  SOLUCIÓN 03
+                </span>
+                <span className="text-xs font-mono text-purple-400 font-semibold">Automático</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-brand-card border border-emerald-500/30">
-                <div className="text-lg sm:text-xl font-bold font-mono text-emerald-400">100</div>
-                <div className="text-[10px] text-brand-muted mt-0.5">Accesibilidad</div>
+
+              <div className="p-3 rounded-2xl bg-brand-card border border-brand-border w-fit text-purple-400">
+                <Zap className="w-6 h-6" />
               </div>
-              <div className="p-2.5 rounded-xl bg-brand-card border border-emerald-500/30">
-                <div className="text-lg sm:text-xl font-bold font-mono text-emerald-400">100</div>
-                <div className="text-[10px] text-brand-muted mt-0.5">Buenas Prácticas</div>
-              </div>
-              <div className="p-2.5 rounded-xl bg-brand-card border border-emerald-500/30">
-                <div className="text-lg sm:text-xl font-bold font-mono text-emerald-400">100</div>
-                <div className="text-[10px] text-brand-muted mt-0.5">SEO Técnico</div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-brand-text group-hover:text-purple-400 transition-colors">
+                Automatización con IA
+              </h3>
+
+              <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                Pon a la tecnología a trabajar por ti. Atiende a clientes potenciales las 24 horas del día, envía presupuestos automáticos y sincroniza tu correo y WhatsApp sin esfuerzo.
+              </p>
+
+              <div className="space-y-2 pt-2 border-t border-brand-border/60">
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Respuesta inmediata al cliente 24/7</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Generación automática de presupuestos y facturas</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Conexión de herramientas sin copiar y pegar</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-brand-text">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span>Cero clientes perdidos por contestar tarde</span>
+                </div>
               </div>
             </div>
 
-            {/* Code Structure Preview */}
-            <div className="rounded-xl bg-brand-bg p-3.5 font-mono text-xs border border-brand-border space-y-1.5 text-brand-dim">
-              <div className="text-[10px] text-brand-cyan flex items-center justify-between pb-1 border-b border-brand-border/60">
-                <span>// RENDIMIENTO DE COMPILACIÓN</span>
-                <span className="text-emerald-400">BUNDLE: 64 KB GZIPPED</span>
-              </div>
-              <div className="text-white text-[11px]">&gt; next build --experimental-turbo</div>
-              <div className="text-brand-muted text-[10px] pl-2">✓ Generating static pages (SSG)</div>
-              <div className="text-brand-muted text-[10px] pl-2">✓ Optimizing images with Next/Image AVIF</div>
-              <div className="text-emerald-400 text-[10px] pl-2 font-bold">✓ First Contentful Paint: 0.3s</div>
+            <div className="pt-6">
+              <a
+                href="#contacto"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-bold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border hover:border-purple-500/40 rounded-xl transition-all"
+              >
+                <span>Automatizar Tareas</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* ============================================================== */}
-        {/* PILAR 02: DIGITALIZACIÓN DE PROCESOS */}
-        {/* ============================================================== */}
-        <div className="space-y-6 pt-10">
-          <div className="max-w-2xl space-y-2">
-            <div className="flex items-center gap-2 font-mono text-xs text-brand-cyan">
-              <span className="px-2 py-0.5 rounded bg-brand-cyan/10 border border-brand-cyan/30">02</span>
-              <span>DIGITALIZACIÓN DE PROCESOS EMPRESARIALES</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Moderniza flujos de trabajo caóticos y elimina errores manuales
+        {/* Visual Real-world Impact Comparator (Antes vs. Después) */}
+        <div className="space-y-6 pt-6">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-mono text-brand-cyan uppercase tracking-wider font-semibold">
+              EL IMPACTO REAL EN TU DÍA A DÍA
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text tracking-tight">
+              Compara el método tradicional con el resultado Nortcode
             </h3>
-            <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
-              Muchas empresas siguen perdiendo horas al día copiando y pegando datos entre hojas de cálculo, correos y notas adhesivas. Diseñamos e implementamos sistemas digitales centralizados para que todo tu equipo trabaje coordinado y sin pérdidas de información.
-            </p>
           </div>
 
-          {/* Interactive Before/After Comparator Component */}
           <BeforeAfterComparator />
-        </div>
-
-        {/* ============================================================== */}
-        {/* PILAR 03: AUTOMATIZACIÓN & IA APLICADA */}
-        {/* ============================================================== */}
-        <div className="space-y-6 pt-10">
-          <div className="max-w-2xl space-y-2">
-            <div className="flex items-center gap-2 font-mono text-xs text-brand-cyan">
-              <span className="px-2 py-0.5 rounded bg-brand-cyan/10 border border-brand-cyan/30">03</span>
-              <span>AUTOMATIZACIÓN CON IA & WEBHOOKS</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Haz que la tecnología haga el trabajo repetitivo por ti
-            </h3>
-            <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
-              Conectamos tus canales (formularios, correos, bases de datos, n8n y modelos de lenguaje) para automatizar la atención inicial, la extracción de datos de documentos y la sincronización en tiempo real. Cero humo, solo ahorro tangible de horas de trabajo cada mes.
-            </p>
-          </div>
-
-          {/* Interactive Automation Flow Diagram Component */}
-          <AutomationFlow />
         </div>
       </div>
     </section>
