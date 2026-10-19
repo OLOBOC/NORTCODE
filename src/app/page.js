@@ -4,9 +4,10 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import WebSimulator from '@/components/WebSimulator';
-import WebAuditTool from '@/components/WebAuditTool';
 import Portfolio from '@/components/Portfolio';
+import TechStackShowcase from '@/components/TechStackShowcase';
+import ProjectPlanner from '@/components/ProjectPlanner';
+import WebAuditTool from '@/components/WebAuditTool';
 import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -36,41 +37,44 @@ export default function Home() {
 
       {/* Main Content Area */}
       <main className="flex-grow">
-        {/* 1. Hero Section (Comercial, claro, sin tecnicismos excesivos) */}
+        {/* 1. Hero Section: Estudio de Ingeniería & Diseño Web de Alto Nivel */}
         <Hero />
 
-        {/* 2. Soluciones & Precios (Web, Digitalización, Automatización + Comparador Antes/Después) */}
+        {/* 2. Soluciones Web a Medida para Cada Bolsillo + Comparador Antes/Después */}
         <Services />
 
-        {/* 3. Perspectiva Visual & Simulador Interactivo de Web */}
-        <WebSimulator onTransferToContact={handleTransferToContact} />
-
-        {/* 4. Lead Magnet: Auditoría Rápida & Pérdida de Clientes por Lentitud */}
-        <WebAuditTool onTransferToContact={handleTransferToContact} />
-
-        {/* 5. Portfolio Visual con Enlaces en Vivo (Audax Motors, DFR Xtra Detail, NailsWell) */}
+        {/* 3. Casos Reales con Portadas en Vivo (Audax Motors, DFR Xtra Detail, NailsWell) */}
         <Portfolio />
 
-        {/* 6. Sobre Nortcode con la Fotografía del Fundador (Omar) & Titulaciones Oficiales */}
+        {/* 4. Capacidad de Ingeniería Completa (Next.js, React, Node, Python, Laravel, PostgreSQL, Cloudflare, n8n) */}
+        <TechStackShowcase />
+
+        {/* 5. Planificador & Configurador de Proyecto Corporativo */}
+        <ProjectPlanner onTransferToContact={handleTransferToContact} />
+
+        {/* 6. Diagnóstico de Rendimiento Gratuito */}
+        <WebAuditTool onTransferToContact={handleTransferToContact} />
+
+        {/* 7. Sobre Nortcode con Retrato Editorial de Omar & Titulaciones Oficiales */}
         <About />
 
-        {/* 7. Formulario de Presupuesto Seguro & Acceso Directo a WhatsApp */}
+        {/* 8. Formulario de Presupuesto con Entrega al Correo Oficial */}
         <ContactForm
           initialData={contactInitialData}
           onOpenLegalModal={openLegalModal}
         />
       </main>
 
-      {/* Footer con Accesos Legales */}
+      {/* Footer Corporativo sin Enlace de GitHub */}
       <Footer onOpenLegalModal={openLegalModal} />
 
-      {/* Modals for Legal Compliance (LSSI-CE, RGPD, Cookies) */}
+      {/* Modales de Cumplimiento Legal (LSSI-CE, RGPD, Cookies) */}
       <LegalModals
         activeModal={activeLegalModal}
         onClose={closeLegalModal}
       />
 
-      {/* Cookie Banner RGPD */}
+      {/* Banner de Cookies RGPD */}
       <CookieBanner
         onOpenCookiesPolicy={() => openLegalModal('cookies')}
       />

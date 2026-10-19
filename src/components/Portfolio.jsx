@@ -1,190 +1,239 @@
 'use client';
 
-import { ExternalLink, ArrowUpRight, CheckCircle2, Globe, Sparkles, Eye, ShieldCheck, Zap } from 'lucide-react';
+import { ExternalLink, ArrowRight, Globe, Zap, ShieldCheck, Check, Sparkles } from 'lucide-react';
 
 export default function Portfolio() {
-  const projects = [
+  const caseStudies = [
     {
       id: 'audax-motors',
       title: 'Audax Motors',
-      category: 'AUTOMOCIÓN & CONCESIONARIO DE ALTA GAMA',
-      domain: 'audax-motors.vercel.app',
-      tagline: 'Plataforma web con catálogo dinámico de vehículos de ocasión y entrega inmediata.',
-      description: 'Diseño sobrio de lujo y alta gama con fondo oscuro, tipografía editorial, catálogo filtrable por smartphone y llamada/WhatsApp con 1 toque.',
+      subtitle: 'Concesionario de Vehículos Seleccionados & Alta Gama',
+      location: 'Gijón, Asturias',
       url: 'https://audax-motors.vercel.app/',
+      domain: 'audax-motors.vercel.app',
       image: '/portfolio-audax.png',
-      badges: ['Next.js 15', 'Catálogo Dinámico', 'Luxury UI', 'Mobile First', 'Stripe Ready'],
-      metrics: { speed: '0.4s', seo: '100/100', status: 'PRODUCCIÓN' },
-      accent: 'from-amber-500/20 via-yellow-500/10 to-transparent',
+      tag: 'AUTOMOCIÓN & CATÁLOGO',
+      tagColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+      description: 'Diseño sobrio de lujo y alta gama con fondo oscuro, tipografía editorial, catálogo dinámico filtrable por smartphone y llamada/contacto con 1 toque.',
+      deliverables: [
+        'Catálogo de vehículos en stock con fichas técnicas completas',
+        'Carga instantánea en smartphones y adaptación fluida',
+        'Botones de llamada y contacto directo sin fricción comercial',
+        'Infraestructura desplegada en Edge CDN de máxima velocidad',
+      ],
+      stack: ['Next.js 15', 'Tailwind CSS', 'Vercel Edge', 'Catálogo Dinámico', 'Mobile First'],
+      metrics: {
+        speed: '< 0.4s',
+        score: '100 / 100',
+        status: 'OPERATIVO EN VIVO',
+      },
     },
     {
       id: 'dfr-detail',
       title: 'DFR Xtra Detail',
-      category: 'DETAILING & ESTÉTICA AUTOMOTRIZ VIP',
-      domain: 'dfr-xtra-detail.vercel.app',
-      tagline: 'Landing page comercial de alto impacto para tratamientos cerámicos 9H y restauración.',
-      description: 'Atmósfera visual oscura con acentos verde neón, ticker técnico en vivo, tarjetas de estándares de calidad y embudo de conversión directa a cita previa.',
+      subtitle: 'Atelier de Detailing & Estética Automotriz de Precisión',
+      location: 'Gijón, Asturias',
       url: 'https://dfr-xtra-detail.vercel.app/#inicio',
+      domain: 'dfr-xtra-detail.vercel.app',
       image: '/portfolio-dfr.png',
-      badges: ['React 19', 'Diseño Dark Prémium', 'Conversión Directa', 'Core Web Vitals 100', 'Gijón'],
-      metrics: { speed: '0.3s', seo: '100/100', status: 'PRODUCCIÓN' },
-      accent: 'from-emerald-500/20 via-lime-500/10 to-transparent',
+      tag: 'LUJO & DETAILING',
+      tagColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      description: 'Atmósfera visual oscura con acentos verde neón, ticker técnico en vivo con coordenadas de ubicación, catálogo de tratamientos cerámicos y embudo de conversión directa a cita previa.',
+      deliverables: [
+        'Composición visual inmersiva para destacar el trabajo artesanal',
+        'Presentación de estándares de calidad (tratamientos cerámicos 9H, pulido)',
+        'Estructura optimizada para captación de clientes de alto valor',
+        'Puntuación perfecta en Google PageSpeed y estabilidad visual',
+      ],
+      stack: ['React 19', 'Tailwind CSS', 'Dark Luxury UI', 'Core Web Vitals 100', 'SEO Local'],
+      metrics: {
+        speed: '< 0.3s',
+        score: '100 / 100',
+        status: 'OPERATIVO EN VIVO',
+      },
     },
     {
       id: 'nailswell-saas',
       title: 'NailsWell & SaaS Platform',
-      category: 'PLATAFORMA DE CITAS & RESERVAS A MEDIDA',
-      domain: 'nailswell.com (Demo)',
-      tagline: 'Portal de citas automatizadas para locales de estética y profesionales independientes.',
-      description: 'Permite a los negocios independizarse de directorios comunes con comisiones abusivas mediante su propio sistema de reservas web 24/7 con recordatorios.',
+      subtitle: 'Plataforma Cloud de Gestión y Citas sin Comisiones',
+      location: 'España / Remoto',
       url: 'https://oloboc.github.io/',
-      image: null, // Interactive high-tech render
-      badges: ['Next.js', 'Firebase Realtime', 'Sin Comisiones', 'Panel Clientes', 'WhatsApp Sync'],
-      metrics: { speed: '0.5s', seo: '98/100', status: 'DEMO VIVA' },
-      accent: 'from-purple-500/20 via-indigo-500/10 to-transparent',
+      domain: 'oloboc.github.io',
+      image: null,
+      tag: 'SAAS & RESERVAS',
+      tagColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+      description: 'Plataforma a medida para locales y profesionales que permite gestionar agenda y reservas online 24/7 sin pagar comisiones por cliente a directorios intermediarios.',
+      deliverables: [
+        'Sistema de agenda online 24 horas y base de datos de clientes',
+        'Independencia total de aplicaciones con cuotas y comisiones abusivas',
+        'Panel administrativo seguro y accesible desde cualquier smartphone',
+        'Arquitectura modular escalable con integración de pagos',
+      ],
+      stack: ['Next.js', 'Firebase Realtime', 'Panel Admin', 'Sin Comisiones', 'API Sync'],
+      metrics: {
+        speed: '< 0.5s',
+        score: '98 / 100',
+        status: 'DEMO DISPONIBLE',
+      },
     },
   ];
 
   return (
-    <section id="proyectos" className="py-24 bg-brand-bg relative border-t border-brand-border/60 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-brand-cyan/5 rounded-full blur-[160px] pointer-events-none" />
+    <section id="proyectos" className="py-28 bg-brand-bg relative border-t border-brand-border/60 overflow-hidden">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-brand-cyan/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-brand-border">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan shadow-sm">
+          <div className="max-w-3xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
-              <span>CASOS REALES & PORTADAS VERIFICADAS</span>
+              <span>CASOS DE ESTUDIO REALES</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight">
-              Proyectos reales que ya generan clientes
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight leading-tight">
+              Trabajos reales con portadas en vivo
             </h2>
-            <p className="text-base text-brand-muted">
-              Aquí puedes ver las portadas reales y navegar directamente a las plataformas en vivo. Acabados de nivel internacional desarrollados a medida por Nortcode.
+            <p className="text-base sm:text-lg text-brand-muted leading-relaxed">
+              Sin maquetas ficticias. Aquí puedes ver las portadas reales de proyectos desarrollados por Nortcode y acceder a las webs en producción.
             </p>
           </div>
 
-          <div className="text-xs font-mono text-brand-dim flex items-center gap-2 bg-brand-surface px-4 py-2 rounded-xl border border-brand-border">
+          <div className="text-xs font-mono text-brand-dim flex items-center gap-2 bg-brand-surface px-4 py-2.5 rounded-2xl border border-brand-border">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-brand-text font-semibold">PORTADAS EN VIVO · CERO PLANTILLAS</span>
+            <span className="text-brand-text font-semibold">100% OPERATIVAS EN PRODUCCIÓN</span>
           </div>
         </div>
 
-        {/* Visual Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {projects.map((proj) => (
+        {/* Monumental Case Studies Layout */}
+        <div className="space-y-20">
+          {caseStudies.map((item, idx) => (
             <div
-              key={proj.id}
-              className="rounded-3xl bg-brand-surface border border-brand-border hover:border-brand-border-light transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-xl hover:shadow-2xl hover:-translate-y-1 relative"
+              key={item.id}
+              className="p-6 sm:p-10 rounded-3xl bg-brand-surface/90 border border-brand-border shadow-2xl hover:border-brand-border-light transition-all group"
             >
-              <div>
-                {/* Visual Window Mockup Frame */}
-                <div className="p-3.5 bg-brand-card/90 border-b border-brand-border">
-                  <div className="rounded-2xl overflow-hidden border border-brand-border/80 bg-black shadow-inner">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                {/* Left Side: Real Screenshot in High-End Browser Frame */}
+                <div className="lg:col-span-7">
+                  <div className="rounded-2xl overflow-hidden border border-brand-border/80 bg-black shadow-2xl">
                     {/* Browser Address Bar */}
-                    <div className="px-3.5 py-2 bg-slate-900 border-b border-white/10 flex items-center justify-between text-[11px] font-mono">
+                    <div className="px-4 py-3 bg-slate-900/90 border-b border-white/10 flex items-center justify-between text-xs font-mono">
                       <div className="flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                         <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                        <span className="ml-3 text-slate-400 text-[11px] hidden sm:inline">
+                          https://{item.domain}
+                        </span>
                       </div>
-                      <div className="text-slate-400 flex items-center gap-1 text-[10px] truncate max-w-[170px]">
-                        <Globe className="w-3 h-3 text-slate-500 shrink-0" />
-                        <span className="truncate">https://{proj.domain}</span>
-                      </div>
-                      <span className="text-[9px] text-emerald-400 font-bold">{proj.metrics.status}</span>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40">
+                        {item.metrics.status}
+                      </span>
                     </div>
 
-                    {/* Screenshot Preview Image or Interactive High-Tech Fallback */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-950 flex items-center justify-center group-hover:opacity-95 transition-all">
-                      {proj.image ? (
+                    {/* Screenshot Container */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
+                      {item.image ? (
                         <img
-                          src={proj.image}
-                          alt={`Portada web oficial de ${proj.title}`}
+                          src={item.image}
+                          alt={`Portada web oficial de ${item.title}`}
                           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="p-6 text-center space-y-3 bg-gradient-to-br from-purple-950/40 via-slate-900 to-black w-full h-full flex flex-col justify-center items-center select-none">
-                          <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">
-                            SISTEMA DE CITAS & RESERVAS
+                        <div className="p-8 text-center space-y-4 bg-gradient-to-br from-purple-950/40 via-slate-900 to-black w-full h-full flex flex-col justify-center items-center select-none">
+                          <span className="text-xs font-mono px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">
+                            SISTEMA CLOUD DE CITAS
                           </span>
-                          <h4 className="text-base font-bold text-white tracking-tight">
-                            NailsWell Cloud Booking
+                          <h4 className="text-xl font-bold text-white tracking-tight">
+                            NailsWell & SaaS Platform
                           </h4>
-                          <p className="text-xs text-slate-400 max-w-xs">
-                            Independencia de comisiones y recordatorios instantáneos por WhatsApp.
+                          <p className="text-xs text-slate-400 max-w-sm">
+                            Arquitectura modular para reservas 24/7 sin comisiones ni ataduras.
                           </p>
-                          <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-md border border-emerald-800/40">
-                            Disponibilidad 24/7 sin intermediarios
+                          <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-md border border-emerald-800/40">
+                            Disponibilidad 100% en la nube
                           </span>
                         </div>
                       )}
 
-                      {/* Hover Overlay Button */}
+                      {/* Hover Overlay with Direct Live Link */}
                       <a
-                        href={proj.url}
+                        href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 backdrop-blur-xs transition-opacity flex items-center justify-center gap-2 text-xs font-bold text-white"
-                        aria-label={`Ver web en vivo de ${proj.title}`}
+                        className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 backdrop-blur-xs transition-opacity flex items-center justify-center gap-2"
+                        aria-label={`Ver web en vivo de ${item.title}`}
                       >
-                        <span className="px-4 py-2 rounded-xl bg-brand-cyan text-black font-semibold shadow-lg flex items-center gap-1.5">
-                          <span>Explorar Web en Directo</span>
-                          <ExternalLink className="w-3.5 h-3.5" />
+                        <span className="px-5 py-2.5 rounded-xl bg-brand-cyan text-black text-xs font-bold shadow-xl flex items-center gap-2">
+                          <span>Navegar por la Web en Directo</span>
+                          <ExternalLink className="w-4 h-4" />
                         </span>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                {/* Card Editorial Details */}
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center justify-between text-[11px] font-mono">
-                    <span className="text-brand-cyan font-bold tracking-wider">
-                      {proj.category}
+                {/* Right Side: Case Study Metadata & Business Impact */}
+                <div className="lg:col-span-5 space-y-5">
+                  <div className="flex items-center justify-between">
+                    <span className={`text-xs font-mono px-3 py-1 rounded-xl border font-bold ${item.tagColor}`}>
+                      {item.tag}
                     </span>
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                      <Zap className="w-3 h-3" />
-                      <span>{proj.metrics.speed} carga</span>
-                    </span>
+                    <span className="text-xs font-mono text-brand-dim">{item.location}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-brand-text group-hover:text-brand-cyan transition-colors">
-                    {proj.title}
-                  </h3>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text tracking-tight group-hover:text-brand-cyan transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-brand-dim font-mono mt-1">
+                      {item.subtitle}
+                    </p>
+                  </div>
 
                   <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-                    {proj.description}
+                    {item.description}
                   </p>
 
-                  {/* Badges */}
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {proj.badges.map((badge) => (
+                  {/* Deliverables List */}
+                  <div className="space-y-2 pt-2 border-t border-brand-border/60">
+                    <div className="text-[11px] font-mono text-brand-dim uppercase tracking-wider">
+                      Solución implementada:
+                    </div>
+                    {item.deliverables.map((del, dIdx) => (
+                      <div key={dIdx} className="flex items-start gap-2.5 text-xs text-brand-text">
+                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{del}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech Stack Badges */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {item.stack.map((st, sIdx) => (
                       <span
-                        key={badge}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-brand-card border border-brand-border text-brand-text font-medium"
+                        key={sIdx}
+                        className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-brand-card border border-brand-border text-brand-muted font-medium"
                       >
-                        {badge}
+                        {st}
                       </span>
                     ))}
                   </div>
-                </div>
-              </div>
 
-              {/* Card Footer with Direct Live Visit Action */}
-              <div className="p-6 pt-0 mt-2">
-                <a
-                  href={proj.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold text-white bg-slate-900 hover:bg-black dark:bg-brand-card dark:hover:bg-brand-elevated border border-brand-border hover:border-brand-cyan/60 rounded-xl transition-all duration-200 group-hover:border-brand-cyan shadow-sm"
-                >
-                  <span>Abrir Web en Directo ({proj.domain})</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                  {/* Direct Action Button */}
+                  <div className="pt-2">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold text-white bg-slate-900 hover:bg-black dark:bg-brand-card dark:hover:bg-brand-elevated border border-brand-border hover:border-brand-cyan/60 rounded-xl transition-all shadow-sm"
+                    >
+                      <span>Abrir {item.domain}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
