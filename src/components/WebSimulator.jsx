@@ -1,118 +1,145 @@
 'use client';
 
 import { useState } from 'react';
-import { Smartphone, Monitor, CheckCircle2, ArrowRight, Sparkles, MessageCircle, Phone, Star, ShieldCheck, Zap, Eye } from 'lucide-react';
+import { Smartphone, Monitor, CheckCircle2, ArrowRight, Sparkles, MessageCircle, Phone, Star, ShieldCheck, Zap, Eye, RefreshCw } from 'lucide-react';
 
 export default function WebSimulator({ onTransferToContact }) {
-  const [sector, setSector] = useState('auto'); // 'auto' | 'services' | 'local' | 'pro'
+  const [sector, setSector] = useState('auto'); // 'auto' | 'detail' | 'local' | 'pro' | 'upgrade'
   const [device, setDevice] = useState('mobile'); // 'mobile' | 'desktop'
 
   const sectorTemplates = {
     auto: {
       id: 'auto',
-      title: 'Automoción, Concesionarios & Talleres',
-      badge: 'SECTOR MOTOR',
-      tagline: 'Tu catálogo de vehículos y servicios con carga instantánea y llamada directa.',
-      priceRange: 'Desde 390 €',
-      timeframe: '7 - 10 días',
-      conversionHook: 'El cliente ve el stock en su móvil y pulsa "Contactar por WhatsApp" en 3 segundos.',
+      title: 'Concesionarios & Catálogo de Vehículos',
+      badge: 'AUTOMOCIÓN',
+      tagline: 'Tu catálogo dinámico de stock con navegación ágil y botón directo de WhatsApp.',
+      investment: 'Económica y ajustada a tu volumen de stock (sin comisiones)',
+      timeframe: '5 - 10 días laborables',
+      conversionHook: 'El comprador ve los coches en su teléfono y pulsa "Consultar por WhatsApp" en 3 segundos.',
       features: [
-        'Filtro dinámico de stock o servicios',
-        'Botón de llamada y WhatsApp flotante',
-        'Ficha técnica limpia y fotos HD ligeras',
-        'Mapa interactivo de ubicación Google',
+        'Filtro dinámico de stock de vehículos con búsqueda rápida',
+        'Fichas técnicas con fotografías de alta resolución sin ralentizar la web',
+        'Botón flotante de WhatsApp y llamada directa a 1 toque',
+        'Ubicación en Google Maps y reseñas de clientes integradas',
       ],
       mockup: {
-        brandName: 'MOTOR PRESTIGE',
-        heroTitle: 'Vehículos de ocasión garantizados y taller mecánico',
-        heroSubtitle: 'Más de 40 vehículos revisados con entrega inmediata y garantía europea de 1 año.',
-        ctaText: 'Ver Vehículos en Stock',
-        badgeAlert: '🔥 NUEVO STOCK 2026',
-        rating: '4.9 ★ (128 reseñas Google)',
+        brandName: 'AUDAX SELECCIÓN MOTOR',
+        heroTitle: 'Vehículos de ocasión garantizados y entrega inmediata',
+        heroSubtitle: 'Stock exclusivo revisado con garantía europea. Trato directo y transparencia absoluta.',
+        ctaText: 'Explorar Stock Disponible',
+        badgeAlert: '🔥 NUEVO STOCK ACTUALIZADO',
+        rating: '5.0 ★ (140 reseñas verificadas)',
         items: [
-          { name: 'Mercedes Clase A AMG Line', detail: '2023 · 32.000 km · Diésel', price: '26.900 €' },
-          { name: 'Volkswagen Golf 8 TSI', detail: '2022 · 45.000 km · Gasolina', price: '21.500 €' },
+          { name: 'Mercedes-Benz A200 AMG', detail: 'Automático · Diésel · Garantía 24M', badge: 'DISPONIBLE' },
+          { name: 'Audi RS4 Avant Quat.', detail: '450 CV · Historial Oficial · Revisado', badge: 'RESERVADO' },
         ],
       },
     },
-    services: {
-      id: 'services',
-      title: 'Estética, Peluquerías, Detailing & Cuidado',
-      badge: 'SERVICIOS & CITAS',
-      tagline: 'Galería visual de trabajos y sistema de cita previa sin intermediarios.',
-      priceRange: 'Desde 320 €',
-      timeframe: '5 - 8 días',
-      conversionHook: 'Muestra fotos antes/después y llena tu agenda semanal automáticamente.',
+    detail: {
+      id: 'detail',
+      title: 'Detailing, Cuidado del Motor & Estética',
+      badge: 'VIP & DETAILING',
+      tagline: 'Landing page premium con atmósfera oscura de lujo y cita previa sin intermediarios.',
+      investment: 'Solución accesible para negocios que buscan proyectar máxima calidad',
+      timeframe: '5 - 8 días laborables',
+      conversionHook: 'El acabado visual resalta la artesanía de tu trabajo y llena tu agenda semanal.',
       features: [
-        'Galería de fotos antes y después',
-        'Lista de tarifas transparente',
-        'Reserva de cita directa a tu WhatsApp',
-        'Reseñas de clientes 100% verificadas',
+        'Galería fotográfica de tratamientos y resultados antes/después',
+        'Catálogo claro de servicios (cerámicos 9H, pulido, interiores)',
+        'Botón directo para reserva de cita previa sin intermediarios',
+        'Diseño oscuro premium que transmite exclusividad absoluta',
       ],
       mockup: {
-        brandName: 'STUDIO GLOW & DETAIL',
-        heroTitle: 'Tratamientos exclusivos con resultados inmediatos',
-        heroSubtitle: 'Cuidado personalizado con productos de primera gama. Cita previa sin esperas.',
-        ctaText: 'Reservar Cita por WhatsApp',
+        brandName: 'DFR XTRA ATELIER',
+        heroTitle: 'Protección Cerámica 9H & Detailing de Alta Gama',
+        heroSubtitle: 'Tratamientos hidrofóbicos y corrección de pintura con acabado espejo garantizado.',
+        ctaText: 'Solicitar Presupuesto Detailing',
         badgeAlert: '✨ AGENDA ABIERTA ESTA SEMANA',
-        rating: '5.0 ★ (94 reseñas Google)',
+        rating: '4.9 ★ (88 clientes satisfechos)',
         items: [
-          { name: 'Tratamiento Completo Premium', detail: 'Duración: 90 min · Acabado espejo', price: '65 €' },
-          { name: 'Sesión Mantenimiento VIP', detail: 'Duración: 45 min · Garantía total', price: '35 €' },
+          { name: 'Tratamiento Cerámico Multicapa', detail: 'Durabilidad 36 meses · Efecto hidrofóbico', badge: 'POPULAR' },
+          { name: 'Corrección Paint 99% + Faros', detail: 'Eliminación total de swirls y microarañazos', badge: 'CITA PREVIA' },
         ],
       },
     },
     local: {
       id: 'local',
-      title: 'Restaurantes, Cafeterías & Comercio Local',
+      title: 'Restaurantes, Cafeterías & Comercio de Barrio',
       badge: 'COMERCIO & HOSTELERÍA',
-      tagline: 'Carta digital interactiva, reservas rápidas y horario siempre actualizado.',
-      priceRange: 'Desde 290 €',
-      timeframe: '5 - 7 días',
-      conversionHook: 'Cero PDFs pesados. El cliente abre el menú en su móvil sin esperar ni descargar nada.',
+      tagline: 'Carta digital instantánea sin descargar PDFs pesados y reserva de mesa por WhatsApp.',
+      investment: 'Muy económica, pensada para que cualquier negocio local tenga presencia seria',
+      timeframe: '4 - 7 días laborables',
+      conversionHook: 'El cliente abre el menú en su móvil sin esperar, ve tus platos y llama para reservar.',
       features: [
-        'Carta digital rápida sin descargar PDF',
-        'Botón de llamada para reserva de mesa',
-        'Alérgenos y fotos de platos estrella',
-        'Enlace a Google Maps con cómo llegar',
+        'Carta digital ultrarrápida (se abre en 0.3s sin descargar ningún PDF)',
+        'Menú del día y alérgenos actualizables fácilmente',
+        'Botón directo de llamada y reserva de mesa a 1 toque',
+        'Cómo llegar con navegación guiada de Google Maps',
       ],
       mockup: {
-        brandName: 'BISTRO & GASTRONOMÍA',
-        heroTitle: 'Cocina de mercado con ingredientes frescos del día',
-        heroSubtitle: 'Disfruta de nuestros menús degustación y terraza en el centro.',
-        ctaText: 'Ver Carta & Menú del Día',
-        badgeAlert: '🍴 MENÚ SEMANAL ACTUALIZADO',
-        rating: '4.8 ★ (210 reseñas Google)',
+        brandName: 'GASTRONOMÍA & MERCADO',
+        heroTitle: 'Cocina tradicional elaborada con producto fresco local',
+        heroSubtitle: 'Disfruta de nuestros menús del día, especialidades de temporada y terraza.',
+        ctaText: 'Ver Menú & Carta Digital',
+        badgeAlert: '🍴 MENÚ SEMANAL DISPONIBLE',
+        rating: '4.8 ★ (230 opiniones)',
         items: [
-          { name: 'Menú Degustación de Temporada', detail: 'Entrante + Principal + Postre casero', price: '24,50 €' },
-          { name: 'Especialidad de la Casa', detail: 'Receta tradicional con producto local', price: '16,00 €' },
+          { name: 'Menú Degustación Completo', detail: 'Entrante + Principal + Postre artesano', badge: 'RECOMENDADO' },
+          { name: 'Especialidad Tradicional', detail: 'Receta de autor con producto de la zona', badge: 'PLATO ESTRELLA' },
         ],
       },
     },
     pro: {
       id: 'pro',
-      title: 'Profesionales, Abogados, Reformas & Pymes',
-      badge: 'EMPRESAS & AUTÓNOMOS',
-      tagline: 'Web corporativa sobria que transmite máxima solvencia y genera contactos diarios.',
-      priceRange: 'Desde 350 €',
-      timeframe: '6 - 9 días',
-      conversionHook: 'Diferénciate de la competencia con una web rápida que te sitúa como la opción de confianza.',
+      title: 'Empresas, Reformas, Abogados & Pymes',
+      badge: 'CORPORATIVO & PYMES',
+      tagline: 'Web corporativa sobria y moderna que genera consultas comerciales a diario.',
+      investment: 'Presupuesto a medida según los servicios y páginas necesarias',
+      timeframe: '6 - 9 días laborables',
+      conversionHook: 'Te sitúa como la opción de máxima confianza y solvencia frente a tus competidores.',
       features: [
-        'Presentación clara de servicios y tarifas',
-        'Formulario de solicitud de presupuesto',
-        'Garantía y sellos de confianza',
-        'Aviso legal, privacidad y cookies UE',
+        'Presentación estructurada de servicios y metodología de trabajo',
+        'Formulario de contacto seguro y cualificación de solicitudes',
+        'Sellos de garantía y acreditaciones profesionales oficiales',
+        'Textos legales acordes a la normativa española y europea (RGPD)',
       ],
       mockup: {
-        brandName: 'SOLUCIONES TÉCNICAS PRO',
-        heroTitle: 'Servicios profesionales con presupuesto cerrado en 24h',
-        heroSubtitle: 'Más de 10 años de experiencia solucionando proyectos con máxima transparencia.',
-        ctaText: 'Pedir Presupuesto Gratuito',
-        badgeAlert: '💼 PRESUPUESTOS SIN COMPROMISO',
-        rating: '4.9 ★ (76 valoraciones)',
+        brandName: 'INGENIERÍA & SERVICIOS PRO',
+        heroTitle: 'Soluciones técnicas profesionales con presupuesto cerrado',
+        heroSubtitle: 'Más de 10 años resolviendo proyectos con máxima transparencia, rigor y plazos garantizados.',
+        ctaText: 'Solicitar Propuesta Técnica',
+        badgeAlert: '💼 ATENCIÓN DIRECTA Y CERCANA',
+        rating: '4.9 ★ (95 valoraciones)',
         items: [
-          { name: 'Servicio Integral Llave en Mano', detail: 'Garantía por escrito y ejecución rápida', price: 'A medida' },
-          { name: 'Consultoría & Diagnóstico', detail: 'Revisión completa y plan de acción', price: 'Consultar' },
+          { name: 'Consultoría & Diagnóstico', detail: 'Revisión exhaustiva y plan de acción', badge: 'SIN COSTE' },
+          { name: 'Ejecución Integral del Proyecto', detail: 'Garantía por escrito y entrega llave en mano', badge: 'A MEDIDA' },
+        ],
+      },
+    },
+    upgrade: {
+      id: 'upgrade',
+      title: 'Modernización de Web Existente Lenta',
+      badge: 'RESCATE WEB',
+      tagline: 'Transforma una web lenta que no rinde en una máquina de captar clientes en 0.4s.',
+      investment: 'Económica: mantenemos tus contenidos y dominio rehaciendo solo el motor',
+      timeframe: '5 - 8 días laborables',
+      conversionHook: 'Recupera el 30% de clientes que se van por la lentitud de tu web actual.',
+      features: [
+        'Reconstrucción completa con Next.js 15 y Tailwind CSS',
+        'Puntuación 95-100 en Google PageSpeed garantizada',
+        'Mantenimiento de tu dominio y tus correos sin cortar el servicio',
+        'Diseño moderno responsive adaptado a los estándares de 2026',
+      ],
+      mockup: {
+        brandName: 'OPTIMIZACIÓN & RENDIMIENTO',
+        heroTitle: 'Tu web actual, pero 10 veces más rápida y atractiva',
+        heroSubtitle: 'Olvídate de caídas de servidor y constructores pesados. Código limpio y ligero.',
+        ctaText: 'Comprobar Velocidad Actual',
+        badgeAlert: '⚡ VELOCIDAD EXTREMA < 0.4S',
+        rating: '100 / 100 Google PageSpeed',
+        items: [
+          { name: 'Auditoría y Migración Limpia', detail: 'Cero pérdida de datos ni posicionamiento', badge: '100% SEGURO' },
+          { name: 'Despliegue en Edge Cloudflare', detail: 'CDN global de máxima velocidad y protección', badge: 'INCLUIDO' },
         ],
       },
     },
@@ -121,12 +148,11 @@ export default function WebSimulator({ onTransferToContact }) {
   const current = sectorTemplates[sector];
 
   const handleSelectTemplate = () => {
-    const msg = `[SOLICITUD DESDE EL SIMULADOR WEB]:
-- Sector seleccionado: ${current.title}
-- Formato preferido: ${device === 'mobile' ? 'Móvil First' : 'Escritorio & Móvil'}
-- Rango de referencia: ${current.priceRange}
+    const msg = `[CONFIGURADOR NORTCODE]:
+- Modalidad seleccionada: ${current.title}
+- Formato preferido: ${device === 'mobile' ? 'Optimizado para Móviles' : 'Escritorio & Móvil'}
 
-Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría un presupuesto formal y hablar de los detalles.`;
+Hola Omar, he visto este modelo de web en el configurador y me gustaría que me des una propuesta económica y hablar de los detalles para mi negocio.`;
 
     if (onTransferToContact) {
       onTransferToContact({
@@ -144,53 +170,53 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
   return (
     <section id="simulador" className="py-24 bg-brand-bg relative border-t border-brand-border/60 overflow-hidden">
       {/* Decorative gradient blur */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-cyan/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-cyan/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan shadow-sm">
             <Eye className="w-3.5 h-3.5" />
-            <span>PERSPECTIVA VISUAL & SIMULADOR</span>
+            <span>CONFIGURADOR VISUAL EN TIEMPO REAL</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight">
-            Mira exactamente cómo quedará la web de tu negocio
+            Comprueba cómo transformamos la presencia de tu negocio
           </h2>
 
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed">
-            Sin tecnicismos ni maquetas complicadas. Selecciona tu sector y comprueba cómo transformamos visitas en llamadas y ventas con una web limpia, rápida y económica.
+            Elige tu sector o si deseas mejorar una web existente lenta. Sin tecnicismos: comprueba el acabado visual y solicita una solución económica adaptada a tus necesidades.
           </p>
         </div>
 
         {/* Sector Selector Buttons */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-2.5 max-w-5xl mx-auto">
           {Object.values(sectorTemplates).map((s) => (
             <button
               key={s.id}
               onClick={() => setSector(s.id)}
-              className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all border flex flex-col justify-between gap-2 shadow-sm ${
+              className={`p-3.5 rounded-2xl text-left transition-all border flex flex-col justify-between gap-2 shadow-sm ${
                 sector === s.id
                   ? 'bg-brand-surface border-brand-cyan text-brand-text ring-1 ring-brand-cyan/30 shadow-brand-cyan/10'
                   : 'bg-brand-surface/60 border-brand-border hover:border-brand-border-light text-brand-muted hover:text-brand-text'
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold ${
+                <span className={`text-[9px] font-mono px-2 py-0.5 rounded font-semibold ${
                   sector === s.id ? 'bg-brand-cyan/20 text-brand-cyan' : 'bg-brand-card text-brand-dim'
                 }`}>
                   {s.badge}
                 </span>
                 {sector === s.id && <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />}
               </div>
-              <span className="text-xs sm:text-sm font-bold line-clamp-2">{s.title}</span>
+              <span className="text-xs font-bold line-clamp-2 leading-tight">{s.title}</span>
             </button>
           ))}
         </div>
 
-        {/* Main Interactive Stage: Simulator Frame + Commercial Pricing Details */}
+        {/* Main Interactive Stage: Simulator Frame + Commercial Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Interactive Device Mockup (Phone / Desktop Frame) */}
+          {/* Left Column: Interactive Device Mockup Frame */}
           <div className="lg:col-span-7 flex flex-col items-center">
             {/* Device Switcher Controls */}
             <div className="flex items-center gap-2 mb-4 p-1.5 rounded-2xl bg-brand-surface border border-brand-border shadow-sm">
@@ -203,7 +229,7 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
                 }`}
               >
                 <Smartphone className="w-3.5 h-3.5" />
-                <span>Vista Móvil (90% de tus visitas)</span>
+                <span>Vista Móvil (El 90% de tus clientes)</span>
               </button>
               <button
                 onClick={() => setDevice('desktop')}
@@ -234,7 +260,7 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
                 <div className="flex items-center gap-1 text-[10px] text-slate-300 bg-slate-800/80 px-2.5 py-0.5 rounded-full">
                   <span>🔒 tu-negocio.es</span>
                 </div>
-                <span className="text-[10px] text-emerald-400 font-bold">0.5s</span>
+                <span className="text-[10px] text-emerald-400 font-bold">0.4s</span>
               </div>
 
               {/* Simulated Web Page Content */}
@@ -284,14 +310,14 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
                 {/* Simulated Content Cards */}
                 <div className="space-y-2 pt-2 border-t border-brand-border/60">
                   <div className="text-[10px] font-mono text-brand-dim uppercase tracking-wider">
-                    DESTACADOS DE TU NEGOCIO:
+                    DESTACADOS EN TIEMPO REAL:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {current.mockup.items.map((item, idx) => (
                       <div key={idx} className="p-3 rounded-xl bg-brand-surface/90 border border-brand-border space-y-1">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold text-brand-text truncate">{item.name}</h4>
-                          <span className="text-[11px] font-mono text-brand-cyan font-bold">{item.price}</span>
+                          <span className="text-[10px] font-mono text-emerald-400 font-semibold">{item.badge}</span>
                         </div>
                         <p className="text-[10px] text-brand-muted">{item.detail}</p>
                       </div>
@@ -299,7 +325,7 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
                   </div>
                 </div>
 
-                {/* Floating WhatsApp Quick Action Simulation */}
+                {/* WhatsApp Action Simulation */}
                 <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <MessageCircle className="w-4 h-4 text-emerald-400" />
@@ -311,11 +337,11 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
             </div>
           </div>
 
-          {/* Right Column: Commercial Offer & What's Included */}
+          {/* Right Column: Commercial Solution Details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-xs font-mono text-brand-cyan uppercase tracking-wider font-semibold">
-                PLAN & PRESUPUESTO RECOMENDADO
+                PLAN & CARACTERÍSTICAS TÉCNICAS
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-brand-text tracking-tight">
                 {current.title}
@@ -325,22 +351,20 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
               </p>
             </div>
 
-            {/* Price & Delivery Card */}
+            {/* Solution Card with No Fixed Price */}
             <div className="p-6 rounded-3xl bg-brand-surface border border-brand-border shadow-xl space-y-4">
-              <div className="flex items-baseline justify-between pb-3 border-b border-brand-border">
+              <div className="space-y-3 pb-3 border-b border-brand-border">
                 <div>
-                  <div className="text-xs font-mono text-brand-dim">PRECIO ORIENTATIVO</div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-brand-text font-mono">
-                    {current.priceRange}
+                  <div className="text-xs font-mono text-brand-dim uppercase">MODALIDAD DE INVERSIÓN</div>
+                  <div className="text-sm sm:text-base font-bold text-emerald-400 font-mono mt-0.5">
+                    {current.investment}
                   </div>
-                  <div className="text-[10px] text-brand-dim">Pago único · Sin comisiones ni ataduras</div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xs font-mono text-brand-dim">TIEMPO DE ENTREGA</div>
-                  <div className="text-lg font-bold text-emerald-400 font-mono">
+                <div>
+                  <div className="text-xs font-mono text-brand-dim uppercase">TIEMPO ESTIMADO DE ENTREGA</div>
+                  <div className="text-sm font-bold text-brand-text font-mono mt-0.5">
                     {current.timeframe}
                   </div>
-                  <div className="text-[10px] text-brand-dim">Puesta en marcha lista</div>
                 </div>
               </div>
 
@@ -352,23 +376,33 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
 
               {/* Features list */}
               <div className="space-y-2 pt-1">
-                <div className="text-xs font-mono text-brand-dim uppercase">Qué incluye tu web:</div>
+                <div className="text-xs font-mono text-brand-dim uppercase">Qué incluye esta solución:</div>
                 {current.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-brand-text">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <div key={idx} className="flex items-start gap-2 text-xs text-brand-text">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
               </div>
 
-              {/* CTA Action */}
-              <div className="pt-2">
+              {/* Direct Actions: WhatsApp + Form Transfer */}
+              <div className="pt-2 space-y-2">
+                <a
+                  href={`https://wa.me/34600000000?text=Hola%20Omar,%20estoy%20en%20el%20configurador%20de%20Nortcode%20y%20quiero%20pedir%20propuesta%20para:%20${encodeURIComponent(current.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg shadow-emerald-950/40 group"
+                >
+                  <MessageCircle className="w-4 h-4 transition-transform group-hover:scale-110" />
+                  <span>Pedir propuesta por WhatsApp para este modelo</span>
+                </a>
+
                 <button
                   onClick={handleSelectTemplate}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold text-brand-bg bg-brand-cyan hover:bg-white rounded-xl transition-all shadow-lg shadow-brand-cyan/20 group"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border rounded-xl transition-all"
                 >
-                  <span>Pedir presupuesto para esta solución</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <span>Rellenar formulario con estos datos</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
@@ -376,10 +410,10 @@ Hola Omar, me ha gustado esta perspectiva de web para mi negocio y me gustaría 
             <div className="flex items-center gap-4 text-xs text-brand-dim font-mono">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                Código 100% de tu propiedad
+                Presupuesto cerrado sin sorpresas
               </span>
               <span>•</span>
-              <span>Garantía técnica directa</span>
+              <span>Código 100% de tu propiedad</span>
             </div>
           </div>
         </div>

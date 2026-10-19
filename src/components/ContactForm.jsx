@@ -258,12 +258,12 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-brand-card border border-brand-border text-brand-text text-xs sm:text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-all"
                     >
-                      <option value="Página Web para mi Negocio">Página Web Económica & Profesional</option>
-                      <option value="Catálogo o Concesionario">Catálogo de Productos / Vehículos</option>
-                      <option value="Plataforma de Reservas o Citas">Plataforma de Citas / Reservas</option>
-                      <option value="Digitalización de Procesos">Digitalizar Procesos & Datos</option>
-                      <option value="Automatización con IA">Automatización de Tareas con IA</option>
-                      <option value="Rediseño / Web Existente Lenta">Mejorar o Rehacer mi Web Actual</option>
+                      <option value="Web Económica para Negocio / Autónomo">Web Económica para Negocio / Autónomo</option>
+                      <option value="Web Corporativa de Empresa / Catálogo">Web Corporativa de Empresa / Catálogo Dinámico</option>
+                      <option value="Portafolio Personal de Autor">Portafolio Personal / Profesional de Autor</option>
+                      <option value="Modernización de Web Lenta">Modernización de Web Existente Lenta</option>
+                      <option value="Digitalización de Procesos">Digitalización de Procesos & Datos</option>
+                      <option value="Automatización con IA">Automatización con Inteligencia Artificial</option>
                     </select>
                   </div>
                 </div>

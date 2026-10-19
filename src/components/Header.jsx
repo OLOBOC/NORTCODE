@@ -19,10 +19,10 @@ export default function Header() {
 
   const navLinks = [
     { label: 'Soluciones', href: '#servicios' },
-    { label: 'Simulador Web', href: '#simulador' },
+    { label: 'Configurador', href: '#simulador' },
     { label: 'Auditoría Gratis', href: '#auditoria', highlight: true },
     { label: 'Casos Reales', href: '#proyectos' },
-    { label: 'Sobre Mí', href: '#sobre-nortcode' },
+    { label: 'Sobre Nortcode', href: '#sobre-nortcode' },
   ];
 
   return (
