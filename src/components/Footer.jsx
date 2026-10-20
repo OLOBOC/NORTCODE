@@ -8,8 +8,9 @@ export default function Footer({ onOpenLegalModal }) {
 
   const navLinks = [
     { label: 'Soluciones Web', href: '#servicios' },
+    { label: 'Ingeniería & Cloud', href: '#ingenieria' },
     { label: 'Proyectos Reales', href: '#proyectos' },
-    { label: 'Configurador', href: '#configurador' },
+    { label: 'Configurador IA', href: '#configurador' },
     { label: 'Auditoría Gratis', href: '#auditoria' },
     { label: 'Sobre Nortcode', href: '#sobre-nortcode' },
     { label: 'Contacto', href: '#contacto' },

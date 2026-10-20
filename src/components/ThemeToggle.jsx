@@ -10,29 +10,18 @@ export default function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem('nortcode_theme');
-    if (stored === 'light') {
-      setTheme('light');
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    } else {
-      setTheme('dark');
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    }
+    const nextTheme = stored === 'light' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    document.documentElement.classList.toggle('light', nextTheme === 'light');
+    document.documentElement.classList.toggle('dark', nextTheme !== 'light');
   }, []);
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     localStorage.setItem('nortcode_theme', next);
-
-    if (next === 'light') {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.toggle('light', next === 'light');
+    document.documentElement.classList.toggle('dark', next !== 'light');
   };
 
   if (!mounted) {

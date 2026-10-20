@@ -90,29 +90,13 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es" className={`${sansFont.variable} ${monoFont.variable}`}>
+    <html lang="es" className={`dark ${sansFont.variable} ${monoFont.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <meta name="theme-color" content="#08090a" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                var theme = localStorage.getItem('nortcode_theme');
-                if (theme === 'light') {
-                  document.documentElement.classList.add('light');
-                  document.documentElement.classList.remove('dark');
-                } else {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.classList.remove('light');
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
         <style
           dangerouslySetInnerHTML={{
             __html: `

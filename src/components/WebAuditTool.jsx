@@ -73,9 +73,9 @@ Hola Nortcode, me gustaría un presupuesto para rehacer o optimizar esta web y e
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
         {/* Pill Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/25 text-xs font-mono text-rose-500 dark:text-rose-400 font-semibold shadow-sm">
-          <Flame className="w-3.5 h-3.5" />
-          <span>AUDITORÍA DE RENDIMIENTO CON IA & PÉRDIDA DE CLIENTES</span>
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/25 text-[10px] sm:text-xs font-mono text-rose-500 dark:text-rose-400 font-semibold shadow-sm max-w-full">
+          <Flame className="w-3.5 h-3.5 shrink-0" />
+          <span>AUDITORÍA DE RENDIMIENTO & ANÁLISIS DE FUGA</span>
         </div>
 
         {/* Primary Headline with High-Conversion Gradient */}

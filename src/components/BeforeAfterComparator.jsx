@@ -56,7 +56,7 @@ export default function BeforeAfterComparator() {
           },
           {
             title: 'Cero cuotas cautivas ni plugins frágiles',
-            desc: 'Código limpio, robusto y 100% de tu propiedad. Sin sorpresas ni costes ocultos cada mes.',
+            desc: 'Código limpio, robusto y escalable sin dependencias propietarias ni costes ocultos cada mes.',
             icon: ShieldCheck,
           },
         ],
@@ -91,7 +91,7 @@ export default function BeforeAfterComparator() {
         ],
       },
       after: {
-        banner: 'RESULTADO NORTCODE: Centralización 100% en la nube y ahorro de 10-15h al mes',
+        banner: 'RESULTADO NORTCODE: Centralización segura en la nube y ahorro de 10-15h al mes',
         items: [
           {
             title: 'Base de datos unificada y segura',

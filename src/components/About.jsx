@@ -5,7 +5,7 @@ import NortcodeLogo from './NortcodeLogo';
 
 const commitments = [
   { title: 'Para Todos los Bolsillos', desc: 'Desde webs básicas económicas hasta plataformas corporativas complejas.' },
-  { title: 'Código 100% Tuyo', desc: 'El código fuente, el diseño y el dominio te pertenecen completamente.' },
+  { title: 'Control & Autonomía', desc: 'Plena libertad sobre tus dominios, diseño y contenidos sin ningún tipo de atadura.' },
   { title: 'Respuesta en 24h', desc: 'Sin comerciales intermediarios. Hablas directamente con quien lo construye.' },
   { title: 'Rendimiento Garantizado', desc: 'Carga en < 0.5s y score 100 en PageSpeed o lo optimizamos.' },
 ];
@@ -18,85 +18,82 @@ const credentials = [
 
 export default function About() {
   return (
-    <section id="sobre-nortcode" className="py-28 bg-brand-bg relative section-diagonal overflow-hidden">
+    <section id="sobre-nortcode" className="py-24 sm:py-28 bg-brand-bg relative section-diagonal overflow-hidden">
       <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[600px] h-[400px] bg-brand-cyan/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* ── Section Header ── */}
-        <div className="mb-16 space-y-4">
+        <div className="mb-14 sm:mb-16 space-y-4">
           <div className="status-pill w-fit">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan inline-block" />
             SOBRE NORTCODE
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-text tracking-[-0.03em] leading-[0.95]">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-brand-text tracking-[-0.03em] leading-[1.05] sm:leading-[0.98] lg:leading-[0.95]">
             El estudio digital<br />
-            <span className="text-brand-muted font-light italic text-3xl sm:text-4xl">que trabaja por ti.</span>
+            <span className="text-brand-muted font-light italic text-2xl sm:text-4xl">que trabaja por ti.</span>
           </h2>
         </div>
 
         {/* ── Main Grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start">
 
-          {/* ── LEFT: Photo Card ── */}
-          <div className="lg:col-span-4">
-            <div className="relative rounded-3xl overflow-hidden bg-brand-card border border-brand-border shadow-2xl">
-
-              {/* Photo */}
-              <div className="relative aspect-[3/4]">
+          {/* ── LEFT: Founder Card (compact, natural landscape ratio, not oversized) ── */}
+          <div className="lg:col-span-4 max-w-md mx-auto lg:mx-0 w-full">
+            <div className="rounded-3xl bg-brand-surface border border-brand-border shadow-2xl overflow-hidden card-lift">
+              {/* Photo Container with natural landscape ratio (matches 1024x571 image) */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-brand-card">
                 <img
                   src="/founder.jpg"
                   alt="Omar Loboc — Fundador de Nortcode"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
                 />
-                {/* Bottom overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                
+                {/* Subtle bottom edge gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-                {/* Name card at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="p-4 rounded-2xl bg-black/70 backdrop-blur-md border border-white/10 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-base font-bold text-white">Omar Loboc</h3>
-                        <p className="text-xs text-brand-cyan font-mono">Fundador & Desarrollador Principal</p>
-                      </div>
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-mono text-emerald-400 font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
-                        ACTIVO
-                      </div>
-                    </div>
-                    <p className="text-[11px] text-gray-300 leading-snug">
-                      Trato directo con quien diseña, programa y entrega tu proyecto.
-                    </p>
-                  </div>
+                {/* Top Badge: Verified Degree */}
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white shadow-lg">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Titulación Oficial</span>
+                </div>
+
+                {/* Status on bottom-left of photo */}
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-emerald-500/40 text-[10px] font-mono text-emerald-400 font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
+                  DIRECTO CON DESARROLLADOR
                 </div>
               </div>
 
-              {/* Verified badge */}
-              <div className="absolute -top-3 -right-3 flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-brand-surface border border-brand-border shadow-xl text-xs font-mono text-brand-text">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Titulación Homologada</span>
-              </div>
-            </div>
+              {/* Founder Bio Details (below photo so face is never cut off or obscured) */}
+              <div className="p-5 sm:p-6 space-y-4">
+                <div className="flex items-start justify-between gap-2 border-b border-brand-border/60 pb-3">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-brand-text">Omar Loboc</h3>
+                    <p className="text-xs text-brand-cyan font-mono mt-0.5">Fundador & Desarrollador Principal</p>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-card border border-brand-border text-brand-dim shrink-0">
+                    NORTCODE
+                  </span>
+                </div>
 
-            {/* CTA buttons under photo */}
-            <div className="mt-5 space-y-3">
-              <a
-                href="#contacto"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-bold text-black bg-brand-cyan hover:bg-white rounded-2xl transition-all shadow-lg shadow-brand-cyan/20"
-              >
-                <Mail className="w-4 h-4" />
-                <span>Contactar por Correo</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#contacto"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-brand-text bg-brand-card hover:bg-brand-elevated border border-brand-border hover:border-brand-border-light rounded-2xl transition-all"
-              >
-                <MessageCircle className="w-4 h-4 text-brand-cyan" />
-                <span>Solicitar Presupuesto</span>
-              </a>
+                <p className="text-xs text-brand-muted leading-relaxed">
+                  Trato directo con quien diseña la arquitectura, programa el código y te acompaña en el lanzamiento. Sin intermediarios comerciales.
+                </p>
+
+                {/* Compact Action Buttons */}
+                <div className="space-y-2 pt-1">
+                  <a
+                    href="#contacto"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold text-black bg-brand-cyan hover:bg-white rounded-xl transition-all shadow-md shadow-brand-cyan/20"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Hablar Directamente por Correo</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -159,15 +156,19 @@ export default function About() {
             </div>
 
             {/* Location + availability */}
-            <div className="p-5 rounded-2xl bg-brand-card border border-brand-border flex items-center gap-5">
-              <div className="p-3 rounded-2xl bg-brand-surface border border-brand-border">
-                <NortcodeLogo size="sm" showBadge={false} />
+            <div className="p-4 sm:p-5 rounded-2xl bg-brand-card border border-brand-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="p-2.5 sm:p-3 rounded-2xl bg-brand-surface border border-brand-border shrink-0">
+                  <NortcodeLogo size="sm" showBadge={false} />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-brand-dim uppercase tracking-wider">UBICACIÓN & ALCANCE</div>
+                  <p className="text-xs sm:text-sm text-brand-text font-medium leading-relaxed">
+                    Operando desde España para clientes locales, pymes y proyectos remotos en toda la Unión Europea.
+                  </p>
+                </div>
               </div>
-              <div>
-                <div className="text-xs font-mono text-brand-dim">UBICACIÓN & ALCANCE</div>
-                <p className="text-sm text-brand-text font-medium">Operando desde España para clientes locales, pymes y proyectos en remoto en toda la Unión Europea.</p>
-              </div>
-              <div className="ml-auto shrink-0 flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl">
+              <div className="shrink-0 flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl self-start sm:self-auto">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
                 DISPONIBLE
               </div>

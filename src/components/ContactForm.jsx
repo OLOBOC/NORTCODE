@@ -268,12 +268,13 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-brand-card border border-brand-border text-brand-text text-xs sm:text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-all"
                     >
-                      <option value="Web Económica para Negocio / Autónomo">Web Económica para Negocio / Autónomo</option>
-                      <option value="Web Corporativa de Empresa / Catálogo">Web Corporativa de Empresa / Catálogo Dinámico</option>
-                      <option value="Portafolio Personal de Autor">Portafolio Personal / Profesional de Autor</option>
-                      <option value="Modernización de Web Lenta">Modernización de Web Existente Lenta</option>
-                      <option value="Digitalización de Procesos">Digitalización de Procesos & Datos</option>
-                      <option value="Automatización con IA">Automatización con Inteligencia Artificial</option>
+                      <option value="Web para Negocio Local / Autónomo">Web para Negocio Local / Autónomo</option>
+                      <option value="Web Corporativa de Empresa & Catálogo">Web Corporativa de Empresa & Catálogo</option>
+                      <option value="Software a Medida & Panel de Control SaaS">Software a Medida & Panel de Control SaaS</option>
+                      <option value="Automatización 24/7 & Agentes de IA">Automatización 24/7 & Agentes de IA</option>
+                      <option value="Portafolio Personal / Profesional de Autor">Portafolio Personal / Profesional de Autor</option>
+                      <option value="Modernización & Rescate de Web Lenta">Modernización & Rescate de Web Lenta</option>
+                      <option value="Auditoría Técnica, OWASP & RGPD">Auditoría Técnica, OWASP & RGPD</option>
                     </select>
                   </div>
                 </div>

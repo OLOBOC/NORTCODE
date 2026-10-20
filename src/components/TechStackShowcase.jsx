@@ -58,7 +58,7 @@ export default function TechStackShowcase() {
               <Cpu className="w-3 h-3" />
               STACK TECNOLÓGICO COMPLETO
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-brand-text tracking-[-0.03em] leading-[0.95]">
+            <h2 className="text-3xl sm:text-5xl font-black text-brand-text tracking-[-0.03em] leading-[1.05] sm:leading-[0.95]">
               Sin limitaciones<br />
               <span className="text-brand-muted font-light italic text-2xl sm:text-3xl">de tecnología.</span>
             </h2>
