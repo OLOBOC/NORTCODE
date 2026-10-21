@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
-import TechStackShowcase from '@/components/TechStackShowcase';
 import ProjectPlanner from '@/components/ProjectPlanner';
 import WebAuditTool from '@/components/WebAuditTool';
 import About from '@/components/About';
@@ -38,27 +37,24 @@ export default function Home() {
       {/* Main Content Area */}
       <main className="flex-grow">
         {/* 1. Hero Section: Estudio de Ingeniería & Diseño Web de Alto Nivel */}
-        <Hero />
+        <Hero onTransferToContact={handleTransferToContact} />
 
-        {/* 2. Soluciones Web a Medida para Cada Bolsillo + Comparador Antes/Después */}
+        {/* 2. Soluciones web y comparador */}
         <Services />
 
-        {/* 3. Casos Reales con Portadas en Vivo (Audax Motors, DFR Xtra Detail, NailsWell) */}
+        {/* 3. Casos reales y propuestas visuales */}
         <Portfolio />
 
-        {/* 4. Capacidad de Ingeniería Completa (Next.js, React, Node, Python, Laravel, PostgreSQL, Cloudflare, n8n) */}
-        <TechStackShowcase />
-
-        {/* 5. Planificador & Configurador de Proyecto Corporativo */}
+        {/* 4. Planificador y configurador de proyecto */}
         <ProjectPlanner onTransferToContact={handleTransferToContact} />
 
-        {/* 6. Diagnóstico de Rendimiento Gratuito */}
+        {/* 5. Diagnóstico de rendimiento */}
         <WebAuditTool onTransferToContact={handleTransferToContact} />
 
-        {/* 7. Sobre Nortcode con Retrato Editorial de Omar & Titulaciones Oficiales */}
+        {/* 6. Sobre Nortcode */}
         <About />
 
-        {/* 8. Formulario de Presupuesto con Entrega al Correo Oficial */}
+        {/* 7. Contacto */}
         <ContactForm
           initialData={contactInitialData}
           onOpenLegalModal={openLegalModal}

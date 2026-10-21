@@ -3,7 +3,6 @@
 export default function NortcodeLogo({
   size = 'md', // 'sm' (28px), 'md' (36px), 'lg' (48px)
   showText = true,
-  showBadge = false,
   className = '',
 }) {
   const sizeMap = {
@@ -55,12 +54,6 @@ export default function NortcodeLogo({
             <span className={`font-mono font-bold tracking-tight text-brand-text ${currentSize.text} leading-none`}>
               NORT<span>CODE</span>
             </span>
-            {showBadge && (
-              <span className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] font-mono bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                ONLINE
-              </span>
-            )}
           </div>
           <span className={`font-mono tracking-wider uppercase text-brand-dim ${currentSize.subtext} mt-0.5 truncate`}>
             Estudio Digital

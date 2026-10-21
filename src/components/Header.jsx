@@ -41,12 +41,12 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Soluciones', href: '#servicios', icon: Globe, tag: 'Web & Móvil' },
-    { label: 'Ingeniería & Cloud', href: '#ingenieria', icon: Server, tag: 'SaaS / DevOps' },
-    { label: 'Casos Reales', href: '#proyectos', icon: Eye, tag: 'En Vivo' },
-    { label: 'Configurador IA', href: '#configurador', icon: Sparkles, tag: 'Nuevo' },
-    { label: 'Auditoría Gratis', href: '#auditoria', icon: Gauge, highlight: true },
-    { label: 'Sobre Nortcode', href: '#sobre-nortcode', icon: UserCheck, tag: 'Equipo' },
+    { label: 'Soluciones', href: '/#servicios', icon: Globe, tag: 'Web & Móvil' },
+    { label: 'Ingeniería & Cloud', href: '/servicios#ingenieria', icon: Server, tag: 'SaaS / DevOps' },
+    { label: 'Casos Reales', href: '/#proyectos', icon: Eye, tag: 'En Vivo' },
+    { label: 'Configurador IA', href: '/#configurador', icon: Sparkles, tag: 'Nuevo' },
+    { label: 'Auditoría Gratis', href: '/#auditoria', icon: Gauge, highlight: true },
+    { label: 'Sobre Nortcode', href: '/#sobre-nortcode', icon: UserCheck, tag: 'Equipo' },
   ];
 
   return (
@@ -62,12 +62,12 @@ export default function Header() {
           <div className="flex items-center justify-between gap-2">
             {/* Official Logo */}
             <a
-              href="#inicio"
+              href="/#inicio"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-3 group focus:outline-none shrink-0"
               aria-label="Nortcode - Ir al inicio"
             >
-              <NortcodeLogo size="md" showBadge={true} />
+              <NortcodeLogo size="md" />
             </a>
 
             {/* Desktop Navigation Links */}
@@ -96,7 +96,7 @@ export default function Header() {
                 href="#contacto"
                 className="hidden sm:inline-flex relative items-center gap-2 px-3.5 sm:px-4 py-2 text-xs font-semibold text-brand-bg bg-brand-cyan hover:bg-white rounded-xl transition-all duration-200 shadow-sm shadow-brand-cyan/20 group focus:outline-none focus:ring-2 focus:ring-brand-cyan/50 shrink-0"
               >
-                <span>Pedir Presupuesto</span>
+                <span>Cuéntame tu caso</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
@@ -138,7 +138,7 @@ export default function Header() {
             <div className="p-3 rounded-2xl bg-brand-card border border-brand-border flex items-center justify-between text-xs font-mono">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-brand-text font-medium">Estudio Nortcode Activo</span>
+                <span className="text-brand-text font-medium"> Nortcode </span>
               </div>
               <span className="text-brand-cyan font-semibold text-[10px] bg-brand-cyan/10 border border-brand-cyan/25 px-2 py-0.5 rounded-full">
                 RESPUESTA &lt; 24H
@@ -188,7 +188,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-4 text-sm font-bold text-black bg-brand-cyan hover:bg-white rounded-2xl transition-all shadow-lg shadow-brand-cyan/20 active:scale-[0.98]"
               >
-                <span>Solicitar Presupuesto Gratuito</span>
+                <span>Cuéntame tu caso</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -197,7 +197,7 @@ export default function Header() {
                 className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brand-card border border-brand-border text-xs font-mono text-brand-muted hover:text-brand-text transition-colors"
               >
                 <Mail className="w-4 h-4 text-brand-cyan" />
-                <span>oloboc.digitalbusiness@gmail.com</span>
+                <span>HABLEMOS</span>
               </a>
             </div>
           </div>

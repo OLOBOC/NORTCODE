@@ -7,12 +7,12 @@ export default function Footer({ onOpenLegalModal }) {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const navLinks = [
-    { label: 'Soluciones Web', href: '#servicios' },
-    { label: 'Ingeniería & Cloud', href: '#ingenieria' },
-    { label: 'Proyectos Reales', href: '#proyectos' },
-    { label: 'Configurador IA', href: '#configurador' },
-    { label: 'Auditoría Gratis', href: '#auditoria' },
-    { label: 'Sobre Nortcode', href: '#sobre-nortcode' },
+    { label: 'Soluciones Web', href: '/#servicios' },
+    { label: 'Ingeniería & Cloud', href: '/servicios#ingenieria' },
+    { label: 'Proyectos Reales', href: '/#proyectos' },
+    { label: 'Configurador IA', href: '/#configurador' },
+    { label: 'Auditoría Gratis', href: '/#auditoria' },
+    { label: 'Sobre Nortcode', href: '/#sobre-nortcode' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
@@ -75,7 +75,7 @@ export default function Footer({ onOpenLegalModal }) {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-cyan text-black text-xs font-bold hover:bg-white transition-colors"
             >
               <Send className="w-3.5 h-3.5" />
-              Solicitar Presupuesto
+              Cuéntame tu caso
             </a>
           </div>
         </div>

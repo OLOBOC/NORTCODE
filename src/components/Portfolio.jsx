@@ -6,7 +6,8 @@ const caseStudies = [
   {
     id: 'audax-motors',
     title: 'Audax Motors',
-    subtitle: 'Concesionario de Alta Gama · Gijón, Asturias',
+    subtitle: 'Concesionario de Alta Gama',
+    location: 'Gijón, Asturias',
     url: 'https://audax-motors.vercel.app/',
     domain: 'audax-motors.vercel.app',
     image: '/portfolio-audax.jpg',
@@ -28,7 +29,8 @@ const caseStudies = [
   {
     id: 'dfr-detail',
     title: 'DFR Xtra Detail',
-    subtitle: 'Atelier de Detailing Premium · Gijón, Asturias',
+    subtitle: 'Atelier de Detailing Premium',
+    location: 'Gijón, Asturias',
     url: 'https://dfr-xtra-detail.vercel.app/#inicio',
     domain: 'dfr-xtra-detail.vercel.app',
     image: '/portfolio-dfr.jpg',
@@ -49,25 +51,43 @@ const caseStudies = [
   },
   {
     id: 'salon-estilismo',
-    title: 'Salón de Estilismo & Peluquería',
-    subtitle: 'Estudio de Imagen & Tratamientos · Asturias',
-    url: null, // Sin enlace público provisionalmente a petición del cliente
-    domain: 'atelier-estilismo.es',
-    image: '/portfolio-peluqueria.svg',
+    title: 'Estilo Vivo',
+    subtitle: 'Peluquería',
+    location: 'Gijón, Asturias',
+    url: null,
+    domain: 'estilo-vivo-gijon.com',
+    image: '/portfolio-estilo-vivo.png',
     tag: 'ESTILISMO & CITAS ONLINE',
     tagColor: 'text-rose-400 bg-rose-500/10 border-rose-500/20',
     accentColor: '#fb7185',
-    highlight: 'Catálogo de cortes, colorimetría 3D y tratamientos capilares con embudo directo a reserva por WhatsApp y posicionamiento local en Google.',
+    highlight: 'Landing para peluquería con estética premium y estructura visual pensada para despertar confianza, personalizar servicios y convertir visitas en citas reales.',
     deliverables: [
-      'Catálogo interactivo de servicios y tratamientos',
-      'Botón directo para agendar citas por WhatsApp',
-      'Integración de horarios y Google Maps local',
-      'Puntuación 100 de carga rápida en smartphones',
+      'Visual premium para marca y branding',
+      'Estructura de hero con mensajes de conversión',
+      'Diseño pensado para móvil y experiencia directa',
+      'Preparado para reserva por WhatsApp o agenda',
     ],
-    stack: ['Next.js 15', 'Tailwind CSS', 'Mobile First', 'WhatsApp API', 'SEO Local'],
-    status: 'PRÓXIMO LANZAMIENTO',
-    speed: '< 0.4s',
-    score: '100',
+    stack: ['Branding Visual', 'Landing Page', 'Tailwind CSS', 'UI Premium', 'Mobile First'],
+    status: 'IMAGEN DE REFERENCIA',
+  },
+  {
+    id: '41-trainer',
+    title: '41 Trainer',
+    subtitle: 'Asesoría online · Fuerza, rendimiento y estética',
+    url: null,
+    image: '/portfolio-41trainer.png',
+    tag: 'ENTRENAMIENTO ONLINE & BIOMECÁNICA',
+    tagColor: 'text-lime-400 bg-lime-500/10 border-lime-500/20',
+    accentColor: '#d4ff3a',
+    highlight: 'Plan personalizado, corrección biomecánica por vídeo y seguimiento real. Calidad por encima de cantidad. Siempre.',
+    deliverables: [
+      'Plan personalizado según objetivos, nivel, material y lesiones',
+      'Corrección de técnica por vídeo',
+      'Soporte directo y revisiones periódicas',
+      'Ajustes continuos de cargas y nutrición',
+    ],
+    stack: ['Asesoría online', 'Fuerza', 'Biomecánica', 'Héctor · @41trainer'],
+    status: 'MAQUETA EN DESARROLLO',
   },
 ];
 
@@ -85,15 +105,15 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="status-pill w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
-              CASOS REALES & EN PRODUCCIÓN
+              PROYECTOS PUBLICADOS Y EN DESARROLLO
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-brand-text tracking-[-0.03em] leading-[1.05] sm:leading-[0.98] lg:leading-[0.95]">
-              Trabajos reales,<br />
-              <span className="text-brand-muted font-light italic text-2xl sm:text-4xl">resultados que se miden.</span>
+              Proyectos y propuestas,<br />
+              <span className="text-brand-muted font-light italic text-2xl sm:text-4xl">con avances visibles.</span>
             </h2>
           </div>
           <p className="text-sm sm:text-base text-brand-muted leading-relaxed max-w-md">
-            Proyectos diseñados con arquitectura moderna, carga instantánea y enfocados en captar clientes desde el primer día.
+            Webs publicadas, diseños de referencia y proyectos en curso. Cada ficha indica claramente si ya está disponible o sigue en desarrollo.
           </p>
         </div>
 
@@ -113,7 +133,7 @@ export default function Portfolio() {
                     <span className="w-3 h-3 rounded-full bg-amber-500/70" />
                     <span className="w-3 h-3 rounded-full bg-emerald-500/70" />
                     <div className="ml-4 flex-1 bg-brand-card rounded-md px-3 py-1 text-[11px] font-mono text-brand-muted truncate">
-                      https://{item.domain}
+                      {item.url ? `https://${item.domain}` : 'Vista previa · sin enlace público'}
                     </div>
                     <span className={`text-[10px] font-mono px-2 py-0.5 rounded ml-2 shrink-0 ${
                       item.url 
@@ -128,7 +148,7 @@ export default function Portfolio() {
                   <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
                     <img
                       src={item.image}
-                      alt={`Web de cliente: ${item.title}`}
+                      alt={item.url ? `Captura de la web publicada de ${item.title}` : `Vista previa del diseño de ${item.title}`}
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                       loading="lazy"
                     />
@@ -153,26 +173,31 @@ export default function Portfolio() {
                       <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
                         <div className="flex items-center gap-2 px-5 py-2.5 rounded-2xl text-xs font-bold text-white bg-brand-surface border border-brand-border">
                           <Clock className="w-4 h-4 text-rose-400" />
-                          <span>Lanzamiento Público Próximo</span>
+                          <span>Vista previa · Sin enlace público</span>
                         </div>
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* Speed metrics below screenshot */}
-                <div className="mt-3 grid grid-cols-3 gap-2">
-                  {[
-                    { label: 'Carga Inicial', value: item.speed },
-                    { label: 'PageSpeed', value: `${item.score}/100` },
-                    { label: 'Estado', value: item.url ? 'En Producción' : 'Fase Final' },
-                  ].map((m, i) => (
-                    <div key={i} className="p-2.5 rounded-xl bg-brand-card border border-brand-border text-center">
-                      <div className="text-xs font-bold text-brand-text">{m.value}</div>
-                      <div className="text-[10px] font-mono text-brand-dim">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
+                {item.url ? (
+                  <div className="mt-3 grid grid-cols-3 gap-2">
+                    {[
+                      { label: 'Carga Inicial', value: item.speed },
+                      { label: 'PageSpeed', value: `${item.score}/100` },
+                      { label: 'Estado', value: 'En Producción' },
+                    ].map((metric) => (
+                      <div key={metric.label} className="p-2.5 rounded-xl bg-brand-card border border-brand-border text-center">
+                        <div className="text-xs font-bold text-brand-text">{metric.value}</div>
+                        <div className="text-[10px] font-mono text-brand-dim">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-3 p-3 rounded-xl bg-brand-card border border-brand-border text-center text-[11px] font-mono text-brand-dim">
+                    {item.status} · SIN ENLACE PÚBLICO
+                  </div>
+                )}
               </div>
 
               {/* Info Side */}
@@ -182,10 +207,12 @@ export default function Portfolio() {
                   <span className={`text-[10px] font-mono font-bold px-3 py-1 rounded-xl border ${item.tagColor}`}>
                     {item.tag}
                   </span>
-                  <span className="flex items-center gap-1 text-xs font-mono text-brand-dim">
-                    <MapPin className="w-3 h-3" />
-                    {item.subtitle.split('·')[1]?.trim()}
-                  </span>
+                  {item.location && (
+                    <span className="flex items-center gap-1 text-xs font-mono text-brand-dim">
+                      <MapPin className="w-3 h-3" />
+                      {item.location}
+                    </span>
+                  )}
                 </div>
 
                 {/* Title */}
@@ -193,7 +220,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl sm:text-4xl font-black text-brand-text tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-brand-dim font-mono mt-1">{item.subtitle.split('·')[0].trim()}</p>
+                  <p className="text-sm text-brand-dim font-mono mt-1">{item.subtitle}</p>
                 </div>
 
                 {/* Highlight */}
@@ -203,7 +230,9 @@ export default function Portfolio() {
 
                 {/* Deliverables */}
                 <div className="space-y-2.5">
-                  <span className="text-[11px] font-mono text-brand-dim uppercase tracking-wider">Solución implementada:</span>
+                  <span className="text-[11px] font-mono text-brand-dim uppercase tracking-wider">
+                    {item.url ? 'Solución implementada:' : 'La propuesta incluye:'}
+                  </span>
                   {item.deliverables.map((del, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-brand-text">
                       <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -239,7 +268,7 @@ export default function Portfolio() {
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold text-brand-cyan bg-brand-card hover:bg-brand-elevated border border-brand-cyan/30 hover:border-brand-cyan transition-all"
                     >
                       <Sparkles className="w-4 h-4" />
-                      <span>Solicitar Web para Peluquería / Belleza</span>
+                      <span>¿Te interesa un proyecto así? Hablemos</span>
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   )}

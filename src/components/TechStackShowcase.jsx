@@ -45,7 +45,7 @@ const MARQUEE_ITEMS = [...TECH_ROWS, ...TECH_ROWS]; // doubled for infinite loop
 
 export default function TechStackShowcase() {
   return (
-    <section className="py-24 bg-brand-card relative overflow-hidden border-y border-brand-border">
+    <section id="stack-tecnologico" className="py-24 bg-brand-card relative overflow-hidden border-y border-brand-border scroll-mt-24">
       {/* Ambient */}
       <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-brand-cyan/3 rounded-full blur-[100px] pointer-events-none" />
 
