@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem('nortcode_theme');
-    const nextTheme = stored === 'light' ? 'light' : 'dark';
+    const nextTheme = stored === 'dark' ? 'dark' : 'light';
     setTheme(nextTheme);
     document.documentElement.classList.toggle('light', nextTheme === 'light');
     document.documentElement.classList.toggle('dark', nextTheme !== 'light');

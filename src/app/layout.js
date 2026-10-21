@@ -90,19 +90,19 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es" className={`dark ${sansFont.variable} ${monoFont.variable}`} suppressHydrationWarning>
+    <html lang="es" className={`light ${sansFont.variable} ${monoFont.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <meta name="theme-color" content="#08090a" />
+        <meta name="theme-color" content="#F1ECE2" />
         <style
           dangerouslySetInnerHTML={{
             __html: `
               html, body {
-                background-color: var(--brand-bg, #060708);
-                color: var(--brand-text, #f3f4f6);
+                background-color: var(--brand-bg, #F1ECE2);
+                color: var(--brand-text, #14130F);
                 margin: 0;
                 padding: 0;
               }

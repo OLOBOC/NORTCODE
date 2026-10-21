@@ -1,6 +1,6 @@
 'use client';
 
-import { ShieldCheck, GraduationCap, CheckCircle2, ArrowRight, Mail, MessageCircle } from 'lucide-react';
+import { GraduationCap, CheckCircle2, ArrowRight, Mail, MessageCircle } from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
 
 const commitments = [
@@ -53,12 +53,6 @@ export default function About() {
                 {/* Subtle bottom edge gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-                {/* Top Badge: Verified Degree */}
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white shadow-lg">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Titulación Oficial</span>
-                </div>
-
                 {/* Status on bottom-left of photo */}
                 <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-emerald-500/40 text-[10px] font-mono text-emerald-400 font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse inline-block" />
@@ -70,7 +64,7 @@ export default function About() {
               <div className="p-5 sm:p-6 space-y-4">
                 <div className="flex items-start justify-between gap-2 border-b border-brand-border/60 pb-3">
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-brand-text">Omar Loboc</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-brand-text">Omar Lobo</h3>
                     <p className="text-xs text-brand-cyan font-mono mt-0.5">Fundador & Desarrollador Principal</p>
                   </div>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-card border border-brand-border text-brand-dim shrink-0">
