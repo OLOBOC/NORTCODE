@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import LegalModals from '@/components/LegalModals';
 import CookieBanner from '@/components/CookieBanner';
+import MobileHome from '@/components/MobileHome';
 
 export default function Home() {
   const [activeLegalModal, setActiveLegalModal] = useState(null); // 'aviso' | 'privacidad' | 'cookies' | null
@@ -32,41 +33,30 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-brand-bg text-brand-text flex flex-col selection:bg-brand-cyan/20 selection:text-brand-cyan">
-      {/* Navigation Bar with Theme Toggle */}
-      <Header />
+      <MobileHome />
 
-      {/* Main Content Area */}
-      <main className="flex-grow">
-        {/* 1. Hero Section: Estudio de Ingeniería & Diseño Web de Alto Nivel */}
-        <Hero onTransferToContact={handleTransferToContact} />
+      <div className="hidden md:flex md:flex-col">
+        {/* Navigation Bar with Theme Toggle */}
+        <Header />
 
-        {/* 2. Soluciones web y comparador */}
-        <Services />
+        {/* Main Content Area */}
+        <main className="flex-grow">
+          <Hero onTransferToContact={handleTransferToContact} />
+          <Services />
+          <Portfolio />
+          <ProjectPlanner onTransferToContact={handleTransferToContact} />
+          <WebAuditTool onTransferToContact={handleTransferToContact} />
+          <About />
+          <ContactForm
+            initialData={contactInitialData}
+            onOpenLegalModal={openLegalModal}
+          />
+          <FAQ />
+        </main>
 
-        {/* 3. Casos reales y propuestas visuales */}
-        <Portfolio />
-
-        {/* 4. Planificador y configurador de proyecto */}
-        <ProjectPlanner onTransferToContact={handleTransferToContact} />
-
-        {/* 5. Diagnóstico de rendimiento */}
-        <WebAuditTool onTransferToContact={handleTransferToContact} />
-
-        {/* 6. Sobre Nortcode */}
-        <About />
-
-        {/* 7. Contacto */}
-        <ContactForm
-          initialData={contactInitialData}
-          onOpenLegalModal={openLegalModal}
-        />
-
-        {/* 8. Preguntas frecuentes */}
-        <FAQ />
-      </main>
-
-      {/* Footer Corporativo sin Enlace de GitHub */}
-      <Footer onOpenLegalModal={openLegalModal} />
+        {/* Footer Corporativo sin Enlace de GitHub */}
+        <Footer onOpenLegalModal={openLegalModal} />
+      </div>
 
       {/* Modales de Cumplimiento Legal (LSSI-CE, RGPD, Cookies) */}
       <LegalModals
