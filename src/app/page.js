@@ -9,6 +9,7 @@ import ProjectPlanner from '@/components/ProjectPlanner';
 import WebAuditTool from '@/components/WebAuditTool';
 import About from '@/components/About';
 import ContactForm from '@/components/ContactForm';
+import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import LegalModals from '@/components/LegalModals';
 import CookieBanner from '@/components/CookieBanner';
@@ -59,6 +60,9 @@ export default function Home() {
           initialData={contactInitialData}
           onOpenLegalModal={openLegalModal}
         />
+
+        {/* 8. Preguntas frecuentes */}
+        <FAQ />
       </main>
 
       {/* Footer Corporativo sin Enlace de GitHub */}

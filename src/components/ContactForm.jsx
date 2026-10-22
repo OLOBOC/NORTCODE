@@ -94,12 +94,12 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
         });
       } else {
         setStatus('error');
-        setStatusMessage(data.error || 'Ocurrió un error al enviar el formulario. Puedes escribirnos directamente a oloboc.digitalbusiness@gmail.com');
+        setStatusMessage(data.error || 'Ocurrió un error al enviar el formulario. Puedes volver a intentarlo o contactarnos directamente.');
       }
     } catch (err) {
       console.error('Contact Form Fetch Error:', err);
       setStatus('error');
-      setStatusMessage('No se pudo establecer conexión. Por favor, escribe directamente a nuestro correo: oloboc.digitalbusiness@gmail.com');
+      setStatusMessage('No se pudo establecer conexión. Por favor, inténtalo de nuevo o contacta con nosotros directamente.');
     }
   };
 
@@ -107,12 +107,12 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
     <section id="contacto" className="py-28 bg-brand-bg relative border-t border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Context, Email Card & Guarantees */}
+          {/* Left Column: Context, Contact Card & Guarantees */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-surface border border-brand-border text-xs font-mono text-brand-cyan">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
-                <span>CANAL DIRECTO POR CORREO</span>
+                <span>CONTACTO DIRECTO</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text tracking-tight leading-tight">
                 Hablemos de tu proyecto
@@ -122,11 +122,11 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
               </p>
             </div>
 
-            {/* Direct Email Address Action Card */}
+            {/* Direct Contact Action Card */}
             <div className="p-6 sm:p-7 rounded-3xl bg-brand-surface border border-brand-border space-y-4 shadow-xl">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono text-brand-cyan uppercase tracking-wider font-semibold">
-                  BUZÓN OFICIAL DEL ESTUDIO
+                  HABLEMOS DE TU PROYECTO
                 </span>
                 <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -135,9 +135,9 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
               </div>
 
               <div className="space-y-1">
-                <h3 className="text-base font-bold text-brand-text">¿Prefieres escribir directamente desde tu correo?</h3>
+                <h3 className="text-base font-bold text-brand-text">¿Hablamos?</h3>
                 <p className="text-xs text-brand-muted leading-relaxed">
-                  Haz clic a continuación para abrir tu cliente de correo habitual con nuestro email oficial preconfigurado.
+                  Cuéntame tu idea y te responderé lo antes posible.
                 </p>
               </div>
 
@@ -150,11 +150,11 @@ export default function ContactForm({ initialData, onOpenLegalModal }) {
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="truncate text-left">
-                    <span className="block text-xs font-mono font-bold text-brand-text truncate">
-                      oloboc.digitalbusiness@gmail.com
+                    <span className="block text-xs font-bold text-brand-text truncate">
+                      Hablemos de tu proyecto
                     </span>
                     <span className="block text-[11px] text-brand-dim">
-                      Enviar correo directo ↗
+                      Contactar ahora ↗
                     </span>
                   </div>
                 </div>
