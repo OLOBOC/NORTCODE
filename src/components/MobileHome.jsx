@@ -12,6 +12,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import MobileHeader from './MobileHeader';
+import MobileNeeds from './MobileNeeds';
 
 const services = [
   { icon: Wrench, title: 'Diseño y desarrollo web', color: 'text-amber-400' },
@@ -92,6 +93,8 @@ export default function MobileHome() {
             <ArrowDown className="h-4 w-4" />
           </a>
         </section>
+
+        <MobileNeeds />
 
         <section id="resumen" className="scroll-mt-20 py-12">
           <div className="mb-5">
