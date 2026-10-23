@@ -58,7 +58,7 @@ export default function Header() {
     { label: 'Inicio', href: '/#inicio', icon: Home },
     { label: 'Soluciones', href: '/#servicios', icon: Globe, tag: 'Web & Móvil' },
     { label: 'Ingeniería & Cloud', href: '/servicios#ingenieria', icon: Server, tag: 'SaaS / DevOps' },
-    { label: 'Auditoría', href: '/#auditoria', icon: Gauge, highlight: true },
+    { label: 'Auditoría Gratis', href: '/#auditoria', icon: Gauge, highlight: true },
     { label: 'Planifica tu proyecto', href: '/#configurador', icon: Sparkles },
     { label: 'Sobre Nortcode', href: '/#sobre-nortcode', icon: UserCheck, tag: 'Equipo' },
     { label: 'Contacto', href: '/#contacto', icon: Mail },
