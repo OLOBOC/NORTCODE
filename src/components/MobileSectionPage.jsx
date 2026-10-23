@@ -10,6 +10,7 @@ import FAQ from './FAQ';
 import LegalModals from './LegalModals';
 import MobileHeader from './MobileHeader';
 import Portfolio from './Portfolio';
+import PricingOverview from './PricingOverview';
 import ProjectPlanner from './ProjectPlanner';
 import Services from './Services';
 import TechStackShowcase from './TechStackShowcase';
@@ -23,6 +24,10 @@ const pageInfo = {
   ingenieria: {
     title: 'Ingeniería & Cloud',
     intro: 'Software a medida, automatización e infraestructura preparada para crecer.',
+  },
+  precios: {
+    title: 'Precios claros y a medida',
+    intro: 'Paquetes, trabajo por horas y proyectos por fases, según lo que necesite tu negocio.',
   },
   proyectos: {
     title: 'Proyectos reales',
@@ -108,6 +113,7 @@ export default function MobileSectionPage({ section }) {
                 <TechStackShowcase />
               </>
             )}
+            {section === 'precios' && <PricingOverview showIntro={false} />}
             {section === 'proyectos' && <Portfolio />}
             {section === 'configurador' && (
               <ProjectPlanner onTransferToContact={transferToContact} />

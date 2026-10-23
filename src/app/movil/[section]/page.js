@@ -1,6 +1,6 @@
 import MobileSectionPage from '@/components/MobileSectionPage';
 
-const sections = ['soluciones', 'ingenieria', 'proyectos', 'configurador', 'auditoria', 'nortcode', 'contacto'];
+const sections = ['soluciones', 'ingenieria', 'precios', 'proyectos', 'configurador', 'auditoria', 'nortcode', 'contacto'];
 
 export function generateStaticParams() {
   return sections.map((section) => ({ section }));

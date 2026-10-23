@@ -9,6 +9,7 @@ export default function Footer({ onOpenLegalModal }) {
   const navLinks = [
     { label: 'Soluciones Web', href: '/#servicios' },
     { label: 'Ingeniería & Cloud', href: '/servicios#ingenieria' },
+    { label: 'Precios', href: '/precios' },
     { label: 'Proyectos Reales', href: '/#proyectos' },
     { label: 'Configurador IA', href: '/#configurador' },
     { label: 'Auditoría Gratis', href: '/#auditoria' },

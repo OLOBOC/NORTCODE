@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import {
   ArrowRight,
+  BadgeEuro,
   Bot,
   BriefcaseBusiness,
   Gauge,
@@ -20,6 +21,7 @@ import ThemeToggle from './ThemeToggle';
 const navLinks = [
   { href: '/movil/soluciones', title: 'Soluciones web', icon: Wrench },
   { href: '/movil/ingenieria', title: 'Ingeniería & Cloud', icon: Server },
+  { href: '/movil/precios', title: 'Precios', icon: BadgeEuro },
   { href: '/movil/proyectos', title: 'Proyectos reales', icon: BriefcaseBusiness },
   { href: '/movil/configurador', title: 'Diseña tu proyecto', icon: Bot },
   { href: '/movil/auditoria', title: 'Rendimiento web', icon: Gauge },
