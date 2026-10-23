@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '/movil/soluciones', title: 'Soluciones web', icon: Wrench },
@@ -47,16 +48,19 @@ export default function MobileHeader({ backHref = '/', backLabel, showContact = 
               <NortcodeLogo size="sm" />
             </Link>
           </div>
-          <button
-            type="button"
-            onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-border bg-brand-surface text-brand-text transition-colors hover:text-brand-cyan"
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
-          >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={() => setMenuOpen((open) => !open)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-border bg-brand-surface text-brand-text transition-colors hover:text-brand-cyan"
+              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </header>
 

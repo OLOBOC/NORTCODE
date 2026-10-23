@@ -1,7 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Globe, Server, Eye, Sparkles, Gauge, UserCheck, Mail, ArrowRight, MessageSquare } from 'lucide-react';
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Gauge,
+  Globe,
+  Home,
+  Mail,
+  Menu,
+  MessageSquare,
+  Server,
+  Sparkles,
+  UserCheck,
+  X,
+} from 'lucide-react';
 import NortcodeLogo from './NortcodeLogo';
 import ThemeToggle from './ThemeToggle';
 
@@ -41,12 +55,14 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
+    { label: 'Inicio', href: '/#inicio', icon: Home },
     { label: 'Soluciones', href: '/#servicios', icon: Globe, tag: 'Web & Móvil' },
     { label: 'Ingeniería & Cloud', href: '/servicios#ingenieria', icon: Server, tag: 'SaaS / DevOps' },
-    { label: 'Casos Reales', href: '/#proyectos', icon: Eye, tag: 'En Vivo' },
-    { label: 'Configurador IA', href: '/#configurador', icon: Sparkles, tag: 'Nuevo' },
-    { label: 'Auditoría Gratis', href: '/#auditoria', icon: Gauge, highlight: true },
+    { label: 'Auditoría', href: '/#auditoria', icon: Gauge, highlight: true },
+    { label: 'Planifica tu proyecto', href: '/#configurador', icon: Sparkles },
     { label: 'Sobre Nortcode', href: '/#sobre-nortcode', icon: UserCheck, tag: 'Equipo' },
+    { label: 'Contacto', href: '/#contacto', icon: Mail },
+    { label: 'Preguntas frecuentes', href: '/#preguntas-frecuentes', icon: MessageSquare },
   ];
 
   return (
@@ -71,12 +87,41 @@ export default function Header() {
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 bg-brand-surface/70 px-4 py-1.5 rounded-full border border-brand-border/60 backdrop-blur-sm" aria-label="Navegación principal">
-              {navLinks.map((link) => (
+            <nav className="hidden lg:flex items-center gap-0.5 bg-brand-surface/70 px-2 py-1.5 rounded-full border border-brand-border/60 backdrop-blur-sm" aria-label="Navegación principal">
+              {navLinks.filter((link) => link.label === 'Inicio').map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  className="whitespace-nowrap px-2.5 py-1.5 text-xs font-medium rounded-full text-brand-muted hover:text-brand-text hover:bg-brand-elevated/70 transition-all duration-200"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <details className="group relative">
+                <summary className="flex cursor-pointer list-none items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-medium text-brand-muted transition-all duration-200 hover:bg-brand-elevated/70 hover:text-brand-text [&::-webkit-details-marker]:hidden">
+                  Soluciones
+                  <ArrowDown className="h-3 w-3 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="absolute left-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-brand-border bg-brand-surface p-1.5 shadow-xl">
+                  <a
+                    href="/#servicios"
+                    className="block rounded-xl px-3 py-2.5 text-xs font-medium text-brand-text transition-colors hover:bg-brand-card"
+                  >
+                    Soluciones web
+                  </a>
+                  <a
+                    href="/servicios#ingenieria"
+                    className="block rounded-xl px-3 py-2.5 text-xs font-medium text-brand-text transition-colors hover:bg-brand-card"
+                  >
+                    Ingeniería &amp; Cloud
+                  </a>
+                </div>
+              </details>
+              {navLinks.filter((link) => !['Inicio', 'Soluciones', 'Ingeniería & Cloud'].includes(link.label)).map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-medium transition-all duration-200 ${
                     link.highlight
                       ? 'text-rose-500 dark:text-rose-400 font-semibold hover:bg-rose-500/10'
                       : 'text-brand-muted hover:text-brand-text hover:bg-brand-elevated/70'

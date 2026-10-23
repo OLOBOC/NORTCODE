@@ -16,12 +16,19 @@ export default function ThemeToggle() {
     document.documentElement.classList.toggle('dark', nextTheme !== 'light');
   }, []);
 
+  useEffect(() => {
+    const syncTheme = (event) => setTheme(event.detail);
+    window.addEventListener('nortcode-theme-change', syncTheme);
+    return () => window.removeEventListener('nortcode-theme-change', syncTheme);
+  }, []);
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     localStorage.setItem('nortcode_theme', next);
     document.documentElement.classList.toggle('light', next === 'light');
     document.documentElement.classList.toggle('dark', next !== 'light');
+    window.dispatchEvent(new CustomEvent('nortcode-theme-change', { detail: next }));
   };
 
   if (!mounted) {
