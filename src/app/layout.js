@@ -32,14 +32,14 @@ export const metadata = {
   ],
   authors: [{ name: 'Nortcode' }],
   creator: 'Nortcode',
-  metadataBase: new URL('https://nortcode.es'),
+  metadataBase: new URL('https://www.nortcode.es'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://nortcode.es',
+    url: 'https://www.nortcode.es',
     title: 'NORTCODE | Estudio Digital • Desarrollo Web, Digitalización & Automatización',
     description: 'Convertimos ideas en soluciones digitales eficientes sin humo ni rodeos. Código de alto rendimiento, flujos automatizados e ingeniería real.',
     siteName: 'Nortcode',
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
     '@type': 'ProfessionalService',
     name: 'Nortcode',
     description: 'Estudio de desarrollo web, digitalización de procesos y automatización técnica.',
-    url: 'https://nortcode.es',
+    url: 'https://www.nortcode.es',
     areaServed: {
       '@type': 'Country',
       name: 'España',
