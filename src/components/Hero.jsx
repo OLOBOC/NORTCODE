@@ -61,8 +61,8 @@ export default function Hero({ onTransferToContact }) {
             {/* Status Badge */}
             <div className="inline-flex items-center gap-3">
               <div className="status-pill">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse inline-block" />
-                Estudio Digital Activo · España
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan inline-block" />
+                Nortcode · Estudio Digital · España
               </div>
             </div>
 

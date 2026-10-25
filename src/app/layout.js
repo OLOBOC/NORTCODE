@@ -16,18 +16,19 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'NORTCODE | Estudio Digital • Desarrollo Web, Digitalización & Automatización',
-  description: 'Desarrollo web profesional, digitalización de procesos y automatización con tecnología e inteligencia artificial. Sin humo ni rodeos.',
+  title: 'NORTCODE | Estudio Digital · Desarrollo Web, Digitalización & Automatización con IA',
+  description: 'Desarrollo web profesional para negocios locales, pymes y empresas. Precios asequibles, carga en milisegundos y soporte directo sin intermediarios. Solicita tu presupuesto gratis.',
   keywords: [
     'Nortcode',
     'desarrollo web profesional',
-    'digitalización de procesos',
+    'web para negocio local',
+    'digitalización pymes España',
     'automatización con IA',
     'n8n automatización pymes',
     'Next.js desarrollo web España',
     'programación a medida',
-    'DAW DAM STI desarrollador',
-    'optimización web SEO técnico'
+    'optimización web SEO técnico',
+    'presupuesto web barato'
   ],
   authors: [{ name: 'Nortcode' }],
   creator: 'Nortcode',
@@ -115,6 +116,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans bg-brand-bg text-brand-text min-h-screen antialiased selection:bg-brand-cyan/20 selection:text-brand-cyan">
+        {/* Skip to main content — accessibility for keyboard/screen reader users */}
+        <a href="#inicio" className="skip-link">
+          Ir al contenido principal
+        </a>
         {children}
       </body>
     </html>

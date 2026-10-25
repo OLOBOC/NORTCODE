@@ -122,20 +122,20 @@ El formulario de contacto está conectado al endpoint seguro `/api/contact` y pr
 
 ## 🌐 Despliegue en Producción (Vercel)
 
-El proyecto está preparado para desplegarse con un solo clic en **Vercel**:
+El repositorio ya está en GitHub. Vercel desplegará automáticamente cada cambio que llegue a la rama `main`.
 
-1. Sube el repositorio a tu cuenta de GitHub:
-   ```bash
-   git remote add origin https://github.com/TU_USUARIO/nortcode.git
-   git push -u origin main
-   ```
-2. Entra en [https://vercel.com/](https://vercel.com/) e inicia sesión con tu GitHub.
-3. Haz clic en **Add New...** → **Project** e importa el repositorio `nortcode`.
-4. En la sección **Environment Variables**, añade:
-   - `RESEND_API_KEY`: Tu clave de Resend.
+1. Entra en [https://vercel.com/](https://vercel.com/) con tu cuenta de GitHub.
+2. Selecciona **Add New...** → **Project** e importa `OLOBOC/NORTCODE`.
+3. En **Environment Variables**, configura para **Production**:
+   - `RESEND_API_KEY`: una clave de API de Resend.
    - `EMAIL_TO`: `oloboc.digitalbusiness@gmail.com`
-   - `EMAIL_FROM`: Tu remitente verificado (o `onboarding@resend.dev`).
-5. Pulsa **Deploy**. En menos de 60 segundos tu web estará publicada a nivel global con HTTPS y CDN.
+   - `EMAIL_FROM`: un remitente autorizado por Resend. Para producción, verifica el dominio de envío en Resend y usa una dirección de ese dominio.
+4. Pulsa **Deploy** y espera a que Vercel indique que el despliegue ha terminado correctamente.
+5. En el proyecto de Vercel, abre **Settings** → **Domains** y añade `nortcode.es` y `www.nortcode.es`. Deja `nortcode.es` como dominio principal.
+6. En DonDominio, abre la gestión DNS de `nortcode.es` y crea o actualiza los registros que Vercel muestre para ambos dominios. Habitualmente son un registro **A** para `@` y un **CNAME** para `www`; usa los valores exactos que indique Vercel. No elimines otros registros DNS que uses para correo.
+7. Espera a que Vercel valide el DNS y active el certificado HTTPS. Después, comprueba `https://nortcode.es`, `https://www.nortcode.es`, `/sitemap.xml` y el formulario de contacto.
+
+Para publicar cambios futuros, haz `git push origin main`; Vercel iniciará un nuevo despliegue automáticamente. No subas `.env.local` ni claves al repositorio: añade los secretos desde **Settings** → **Environment Variables** en Vercel.
 
 ---
 

@@ -43,9 +43,9 @@ export default function Home() {
         <main className="flex-grow">
           <Hero onTransferToContact={handleTransferToContact} />
           <Services />
-          <Portfolio />
-          <ProjectPlanner onTransferToContact={handleTransferToContact} />
           <WebAuditTool onTransferToContact={handleTransferToContact} />
+          <ProjectPlanner onTransferToContact={handleTransferToContact} />
+          <Portfolio />
           <About />
           <ContactForm
             initialData={contactInitialData}
